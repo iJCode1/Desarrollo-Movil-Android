@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CheckBox</string>
+    <string name="txtSaludo">Buen Día Usuari@ 👋!</string>
+    <string name="txtN1">🧮 Ingresa el primer valor</string>
+    <string name="txtN2">🧮 Ingresa el segundo valor</string>
+    <string name="txtSuma">➕ Suma</string>
+    <string name="txtResta">➖ Resta</string>
+    <string name="txtMult">✖️ Multiplicación</string>
+    <string name="txtDiv">➗ División</string>
+    <string name="txtCalcular">Calcular</string>
+    <string name="txtResult">⚠️ Resultado:</string>
+
+</resources>
