@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Promedio Calificaciones</string>
+    <string name="txt_saludo">Buen dia Usuari@ 👋!</string>
+    <string name="txt_quimica">Quimica 🌡</string>
+    <string name="txt_fisica">Fisica 🧲</string>
+    <string name="txt_matematicas">Matematicas  🧮 </string>
+    <string name="txt_lectura">Lectura 📖</string>
+    <string name="txt_administracion">Administración 📈</string>
+    <string name="txt_promediar">Promediar</string>
+    <string name="txt_estatus">🎯 Estatus del Alumno:</string>
+</resources>
