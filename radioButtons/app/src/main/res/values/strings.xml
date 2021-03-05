@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">radioButtons</string>
+    <string name="txtSaludo">Buenos dias usuari@ 👋!</string>
+    <string name="txtN1">🧮 Ingresa el primer valor</string>
+    <string name="txtN2">🧮 Ingresa el segundo valor</string>
+    <string name="rbSuma">Suma</string>
+    <string name="rbResta">Resta</string>
+    <string name="rbMult">Multiplicación</string>
+    <string name="rbDiv">División</string>
+    <string name="txtCalcular">Calcular</string>
+    <string name="txtResultado">👀 Resultado: </string>
+</resources>
