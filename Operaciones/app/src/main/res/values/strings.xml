@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Operaciones Básicas</string>
+    <string name="txt_suma">Suma ➕</string>
+    <string name="txt_resta">Resta ➖</string>
+    <string name="txt_mult">Multiplicación ✖️</string>
+    <string name="txt_division">División ➗</string>
+    <string name="txt_bienvenida">Bienvenid@ 🤩!</string>
+    <string name="txt_result">⚠️ Resultado: </string>
+    <string name="txt_N1">🧮 Ingresa el primer valor</string>
+    <string name="txt_N2">🧮 Ingresa el segundo valor</string>
+</resources>
