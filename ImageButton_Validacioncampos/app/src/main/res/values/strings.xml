@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ImageButton</string>
+    <string name="txtSaludo">Buen día Usuari@ 👋!</string>
+    <string name="txtUsuario">Nombre de Usuario</string>
+    <string name="txtPassword">Contraseña</string>
+    <string name="btnLogin">Entrar</string>
+</resources>
