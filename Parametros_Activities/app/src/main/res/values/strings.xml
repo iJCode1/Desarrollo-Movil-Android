@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Parametros_Activities</string>
+    <string name="txtSaludo">Buen día Usuari@ 👋!</string>
+    <string name="txtUsuario">Ingresa tu Nombre:</string>
+    <string name="txtEdad">Ingresa tu edad:</string>
+    <string name="txtIngresar">Ingresar</string>
+    <string name="txtSaludo2">Bienvenido a la segunda activity 👀</string>
+    <string name="imagen">imagen</string>
+</resources>
