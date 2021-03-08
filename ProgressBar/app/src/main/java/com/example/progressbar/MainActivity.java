@@ -1,7 +1,9 @@
 package com.example.progressbar;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,13 +20,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         pb1 = (ProgressBar)findViewById(R.id.pbProgreso);
-        // initiate progress bar and start button
-
     }
 
     public void Calcular(View view){
-        pb1.setVisibility(View.VISIBLE);
+        String progreso = String.valueOf(pb1.getProgress());
+
+        Toast.makeText(this, "El progreso es: "+progreso, Toast.LENGTH_SHORT).show();
     }
+
+
+
 
 
 }
