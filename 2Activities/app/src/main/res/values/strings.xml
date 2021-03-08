@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">2 Activities</string>
+    <string name="txtSaludo">Buen Día Usuari@ 👋!</string>
+    <string name="txtDespedida">Buenas Noches Usuari@ 🥱!</string>
+</resources>
