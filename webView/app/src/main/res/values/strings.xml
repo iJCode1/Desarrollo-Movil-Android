@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">webView</string>
+    <string name="txtSaludo">Buen día usuari@ 👋🏻 !</string>
+    <string name="txtIngresa">Ingresa lo que deseas buscar</string>
+    <string name="txtBuscar">Buscar 👀</string>
+    <string name="txtResultado">Resultado 🙌</string>
+    <string name="txtRegresar">Regresar</string>
+</resources>
