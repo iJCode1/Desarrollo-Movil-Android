@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EjemploWidget</string>
+    <string name="txtTextV">Ejemplo ImageView</string>
+    <string name="txtProgress">Ejemplo ProgressBar</string>
+    <string name="txtDescription"></string>
+    <string name="txtPorcentaje">0%</string>
+</resources>
