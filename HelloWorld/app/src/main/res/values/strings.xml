@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">HelloWorld</string>
+    <string name="btn1">Cancelar</string>
+    <string name="txtDatos">ɪɴɢʀᴇsᴀ ᴛᴜs ᴅᴀᴛᴏs 📋</string>
+    <string name="txtFormulario">ғᴏʀᴍᴜʟᴀʀɪᴏ</string>
+    <string name="btnFormulario">Formulario</string>
+    <string name="txtNombre">Ingresa tu Nombre:</string>
+    <string name="txtTelefono">Ingresa tu Telefono 📲</string>
+    <string name="txtFecha">Fecha de Nacimiento 📆</string>
+    <string name="txtGenero">ɢᴇɴᴇʀᴏ❗️</string>
+    <string name="txtFemenino">Femenino 👩🏼</string>
+    <string name="txtMasculino">Masculino 👦🏼</string>
+    <string name="txtColor">ᴄᴜᴀʟ ᴇs ᴛᴜ ᴄᴏʟᴏʀ ғᴀᴠᴏʀɪᴛᴏ❓</string>
+    <string name="txtMorado">Morado</string>
+    <string name="txtAzul">Azul</string>
+    <string name="txtAmarillo">Amarillo</string>
+    <string name="txtVerde">Verde</string>
+    <string name="txtNegro">Negro</string>
+    <string name="btnGuardar">Guardar</string>
+    <string name="txtSalir">Salir</string>
+    <string name="button">Button</string>
+    <string name="btnSalir2">Salir</string>
+    <string name="ejemplo_1">¡ Ejemplo 1 🤓 !</string>
+
 </resources>
