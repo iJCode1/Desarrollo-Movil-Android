@@ -9,6 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_margin="10dp"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,41 +27,52 @@
             android:id="@+id/textView3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="15sp"
-            android:paddingBottom="15sp"
+            android:paddingTop="5sp"
+            android:paddingBottom="5sp"
             android:text="@string/txtDatos"
             android:textAlignment="center"
             android:textSize="18sp" />
 
         <EditText
+            android:id="@+id/txtNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/txtNombre"
+            android:inputType="textPersonName"
+            android:paddingLeft="10sp"
+            android:paddingRight="10sp" />
+
+        <EditText
             android:id="@+id/txtFecha"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/txtFecha"
             android:inputType="date"
             android:paddingLeft="10sp"
-            android:paddingRight="10sp"
-            android:autofillHints="" />
+            android:paddingRight="10sp" />
 
         <EditText
-            android:id="@+id/txtPhone"
+            android:id="@+id/txtTelefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints=""
             android:ems="10"
             android:hint="@string/txtTelefono"
             android:inputType="phone"
             android:paddingLeft="10sp"
             android:paddingTop="10sp"
-            android:paddingRight="10sp"
-            android:autofillHints="" />
+            android:paddingRight="10sp" />
 
         <TextView
             android:id="@+id/textView5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="15sp"
-            android:paddingBottom="15sp"
+            android:paddingTop="5sp"
+            android:paddingBottom="5sp"
             android:text="@string/txtColor"
             android:textAlignment="center"
             android:textSize="18sp" />
@@ -99,8 +111,8 @@
             android:id="@+id/txtGenero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="15sp"
-            android:paddingBottom="15sp"
+            android:paddingTop="5sp"
+            android:paddingBottom="5sp"
             android:text="@string/txtGenero"
             android:textAlignment="center"
             android:textSize="18sp" />
@@ -122,13 +134,13 @@
                 android:text="@string/txtMasculino" />
 
             <Button
-                android:id="@+id/btnGuardar"
+                android:id="@+id/btnMostrar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/btnGuardar" />
 
             <Button
-                android:id="@+id/btnSalir2"
+                android:id="@+id/btnLimpiar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/txtSalir" />
