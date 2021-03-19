@@ -30,10 +30,10 @@
                 android:textSize="24sp" />
 
             <ImageView
-                android:id="@+id/imageView3"
+                android:id="@+id/ivFoto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:contentDescription="+"
+                android:contentDescription="@string/txtFotografia"
                 app:srcCompat="@android:mipmap/sym_def_app_icon" />
 
             <Button

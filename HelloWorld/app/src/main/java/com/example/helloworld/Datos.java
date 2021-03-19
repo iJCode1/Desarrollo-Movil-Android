@@ -27,11 +27,11 @@ public class Datos extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
 
-        tvNombre.setText("Nombre: "+extras.getString("nombre"));
-        tvFecha.setText("Fecha de Nacimiento: "+extras.getString("fecha"));
-        tvTelefono.setText("Telefono: "+extras.getString("telefono"));
-        tvSexo.setText("Sexo: "+extras.getString("sexo"));
-        tvColor.setText("Color o colores Selecionados: "+extras.getString("colores"));
+        tvNombre.setText(extras.getString("nombre"));
+        tvFecha.setText(extras.getString("fecha"));
+        tvTelefono.setText(extras.getString("telefono"));
+        tvSexo.setText(extras.getString("sexo"));
+        tvColor.setText(extras.getString("colores"));
 
         btnAnterior = findViewById(R.id.btnSiguiente);
 
