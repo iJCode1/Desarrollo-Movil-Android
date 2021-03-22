@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_index_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ExamenU1DesarrolloMóvil">
-        <activity android:name=".imagenes"></activity>
+        <activity android:name=".Video"></activity>
+        <activity android:name=".imagenes" />
         <activity android:name=".Opciones" />
         <activity android:name=".MainActivity">
             <intent-filter>

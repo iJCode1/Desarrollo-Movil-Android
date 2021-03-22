@@ -81,10 +81,10 @@
             android:textSize="18sp" />
 
         <Button
-            android:id="@+id/button8"
+            android:id="@+id/btnAcercaDe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:onClick="acerca"
+            android:onClick="alerta"
             android:text="@string/btnAbout"
             android:textSize="18sp" />
 
