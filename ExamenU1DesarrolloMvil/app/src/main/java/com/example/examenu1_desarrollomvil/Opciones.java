@@ -28,6 +28,8 @@ public class Opciones extends AppCompatActivity {
     }
 
     public void web(View view){
+        Intent i = new Intent(this, Web.class);
+        startActivity(i);
 
     }
 

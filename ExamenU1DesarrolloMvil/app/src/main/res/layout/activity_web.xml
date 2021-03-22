@@ -6,4 +6,57 @@
     android:layout_height="match_parent"
     tools:context=".Web">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="25dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="90dp"
+        tools:layout_editor_absoluteY="91dp">
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/btnWeb"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <EditText
+            android:id="@+id/txtBusqueda"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:ems="10"
+            android:hint="@string/txtBusqueda"
+            android:inputType="textPersonName"
+            android:padding="10dp"
+            android:textSize="24sp"
+            android:autofillHints="" />
+
+        <WebView
+            android:id="@+id/webV1"
+            android:layout_width="match_parent"
+            android:layout_height="446dp">
+
+        </WebView>
+
+        <Button
+            android:id="@+id/button13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="buscar"
+            android:text="@string/txtBuscar"
+            android:textSize="24sp" />
+
+        <Button
+            android:id="@+id/button11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="regresar"
+            android:text="@string/btnRegresar"
+            android:textSize="24sp" />
+
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,4 +16,6 @@
     <string name="btnAbout">Acerca de 📌❓</string>
     <string name="btnRegresar">Regresar</string>
     <string name="txtImagenes">Imagenes 🏙 🌅</string>
+    <string name="txtBusqueda">Ingresa tu Busqueda 🔍</string>
+    <string name="txtBuscar">Buscar</string>
 </resources>
