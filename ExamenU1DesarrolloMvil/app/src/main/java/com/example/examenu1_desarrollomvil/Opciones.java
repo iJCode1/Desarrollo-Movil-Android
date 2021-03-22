@@ -32,6 +32,8 @@ public class Opciones extends AppCompatActivity {
     }
 
     public void video(View view){
+        Intent i = new Intent(this, Video.class);
+        startActivity(i);
 
     }
 

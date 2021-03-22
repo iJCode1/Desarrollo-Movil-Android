@@ -6,4 +6,33 @@
     android:layout_height="match_parent"
     tools:context=".Video">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="25dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="106dp">
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@string/btnVideo"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <VideoView
+            android:id="@+id/videoV1"
+            android:layout_width="match_parent"
+            android:layout_height="550dp" />
+
+        <Button
+            android:id="@+id/button8"
+            android:layout_width="match_parent"
+            android:layout_height="82dp"
+            android:onClick="regresar"
+            android:text="@string/btnRegresar" />
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
