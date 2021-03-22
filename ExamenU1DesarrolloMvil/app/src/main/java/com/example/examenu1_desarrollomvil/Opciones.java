@@ -2,6 +2,7 @@ package com.example.examenu1_desarrollomvil;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -20,7 +21,8 @@ public class Opciones extends AppCompatActivity {
     }
 
     public void imagenes(View view){
-
+        Intent i = new Intent(this, imagenes.class);
+        startActivity(i);
     }
 
     public void web(View view){
