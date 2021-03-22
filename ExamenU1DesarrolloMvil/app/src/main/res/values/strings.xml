@@ -5,4 +5,14 @@
     <string name="txtPassword">🔑 Ingresa tu contraseña</string>
     <string name="btnIngresar">Ingresar</string>
     <string name="btnSalir">Salir</string>
+    <string name="txtMenu">Menú de Opciones ✨</string>
+    <string name="btnCalculadora">Calculadora 🧮</string>
+    <string name="btnImagenes">Imagenes 🌠 🎇</string>
+    <string name="btnWeb">Web 🌐</string>
+    <string name="btnVideo">Video 🎥</string>
+    <string name="btnReloj">Reloj 🕰</string>
+    <string name="btnDiferente">Diferente 🌘</string>
+    <string name="btnRating">Rating 📈</string>
+    <string name="btnAbout">Acerca de 📌❓</string>
+    <string name="btnRegresar">Regresar</string>
 </resources>

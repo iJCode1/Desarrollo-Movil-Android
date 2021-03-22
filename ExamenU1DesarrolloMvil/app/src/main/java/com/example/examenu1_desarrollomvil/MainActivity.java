@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void Finalizar(View view){
+        Toast.makeText(this, "Que tengas un buen dia!, Adios :D", Toast.LENGTH_LONG).show();
         finishAffinity();
     }
 }
