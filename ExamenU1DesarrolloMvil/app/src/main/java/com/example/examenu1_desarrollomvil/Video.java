@@ -11,7 +11,8 @@ import android.widget.VideoView;
 
 public class Video extends AppCompatActivity {
 
-    VideoView videov1;
+    VideoView videov1, videov2;
+    //https://www.youtube.com/watch?v=_bE3PCRHq-A
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,9 @@ public class Video extends AppCompatActivity {
 
         videov1.setMediaController(mc);
         videov1.start();
+
+
+
     }
 
     public void regresar(View view){

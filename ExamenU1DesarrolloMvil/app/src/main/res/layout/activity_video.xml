@@ -26,7 +26,17 @@
         <VideoView
             android:id="@+id/videoV1"
             android:layout_width="match_parent"
-            android:layout_height="550dp" />
+            android:layout_height="232dp"
+            android:layout_marginBottom="20dp" />
+
+
+        <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            app:autoPlay="true"
+            app:showFullScreenButton="false"
+            app:videoId="N1Ty24sCsMg" />
 
         <Button
             android:id="@+id/button8"
@@ -34,5 +44,6 @@
             android:layout_height="82dp"
             android:onClick="regresar"
             android:text="@string/btnRegresar" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
