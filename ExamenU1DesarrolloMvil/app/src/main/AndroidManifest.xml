@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_index_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ExamenU1DesarrolloMóvil">
-        <activity android:name=".Reloj"></activity>
+        <activity android:name=".ratingBar"></activity>
+        <activity android:name=".Reloj" />
         <activity android:name=".Web" />
         <activity android:name=".Video" />
         <activity android:name=".imagenes" />

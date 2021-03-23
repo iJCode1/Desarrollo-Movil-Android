@@ -18,6 +18,7 @@
             android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:layout_marginBottom="10dp"
             android:text="@string/btnReloj"
             android:textAlignment="center"
@@ -27,6 +28,7 @@
             android:id="@+id/imageView12"
             android:layout_width="match_parent"
             android:layout_height="146dp"
+            android:layout_marginTop="10dp"
             app:srcCompat="@drawable/clock" />
 
         <TextView
@@ -69,7 +71,7 @@
             android:id="@+id/button12"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="250dp"
+            android:layout_marginTop="200dp"
             android:onClick="regresar"
             android:text="@string/btnRegresar"
             android:textSize="24sp" />

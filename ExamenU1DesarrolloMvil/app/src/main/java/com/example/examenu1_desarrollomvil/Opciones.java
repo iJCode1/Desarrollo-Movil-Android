@@ -56,7 +56,8 @@ public class Opciones extends AppCompatActivity {
     }
 
     public void rating(View view){
-
+        Intent i = new Intent(this, ratingBar.class);
+        startActivity(i);
     }
 
     public void alerta(View view){

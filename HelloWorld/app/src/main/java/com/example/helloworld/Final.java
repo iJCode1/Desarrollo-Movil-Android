@@ -94,7 +94,7 @@ public class Final extends AppCompatActivity {
     String mCurrentPhotoPath;
     private File createFileImage() throws IOException{
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmSS").format(new Date());
-        String imageFilename= "JPEG" +timeStamp+ "_";
+        String imageFilename= "imagen" +timeStamp+ "_";
         File storageDir= Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES);
         File image =File.createTempFile(imageFilename,".jpg",storageDir);
         mCurrentPhotoPath="file"+image.getAbsolutePath();
