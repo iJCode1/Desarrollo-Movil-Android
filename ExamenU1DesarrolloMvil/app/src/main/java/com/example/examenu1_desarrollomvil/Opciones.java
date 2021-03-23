@@ -26,7 +26,8 @@ public class Opciones extends AppCompatActivity {
     }
 
     public void calculadora(View view){
-
+        Intent i = new Intent(this, calc.class);
+        startActivity(i);
     }
 
     public void imagenes(View view){

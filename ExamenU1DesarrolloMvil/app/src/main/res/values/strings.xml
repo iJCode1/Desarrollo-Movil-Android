@@ -7,6 +7,7 @@
     <string name="btnSalir">Salir</string>
     <string name="txtMenu">Menú de Opciones ✨</string>
     <string name="btnCalculadora">Calculadora 🧮</string>
+    <string name="txtCalculadora2">Calculadora Cientifica 🧮</string>
     <string name="btnImagenes">Imagenes 🌠 🎇</string>
     <string name="btnWeb">Web 🌐</string>
     <string name="btnVideo">Video 🎥</string>
@@ -23,4 +24,29 @@
     <string name="txtRating">Gracias por evaluar la APP ⭐️⭐️⭐️⭐️⭐️</string>
     <string name="txtMostrar">Mostrar u Ocultar Imagen️ 🌚</string>
     <string name="txtMostrar2">Mostrar/Ocultar</string>
+    <string name="txt7">7</string>
+    <string name="txt8">8</string>
+    <string name="txt9">9</string>
+    <string name="txt6">6</string>
+    <string name="txt5">5</string>
+    <string name="txt4">4</string>
+    <string name="txt3">3</string>
+    <string name="txt2">2</string>
+    <string name="txt1">1</string>
+    <string name="txt0">0</string>
+    <string name="txtmas">+</string>
+    <string name="txtmenos">-</string>
+    <string name="txtmult">*</string>
+    <string name="txtdiv">/</string>
+    <string name="txtigaul">=</string>
+    <string name="txtPot">^</string>
+    <string name="txtBorrar">⇦</string>
+    <string name="txtCe">CE</string>
+    <string name="txtPunto">.</string>
+    <string name="txtLog">LOG</string>
+    <string name="txtSin">SIN</string>
+    <string name="txtCos">COS</string>
+    <string name="txtTan">TAN</string>
+    <string name="txtRaiz">√</string>
+    <string name="borrar"><![CDATA[<--]]></string>
 </resources>

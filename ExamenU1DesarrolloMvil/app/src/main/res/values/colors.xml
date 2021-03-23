@@ -7,4 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="operaciones">#810034</color>
+    <color name="igual">#fff600</color>
+    <color name="borar">#ff005c</color>
+    <color name="avanzado">#ff75a0</color>
 </resources>
