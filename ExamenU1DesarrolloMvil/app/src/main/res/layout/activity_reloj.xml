@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="25dp"
+    tools:context=".Reloj">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="186dp"
+        tools:layout_editor_absoluteY="163dp">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="@string/btnReloj"
+            android:textAlignment="center"
+            android:textSize="30sp" />
+
+        <ImageView
+            android:id="@+id/imageView12"
+            android:layout_width="match_parent"
+            android:layout_height="146dp"
+            app:srcCompat="@drawable/clock" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/txtFecha"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txtFecha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/txtFecha"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:text="@string/txtHora"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/txtHora"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/txtHora"
+            android:textAlignment="center"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/button12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp"
+            android:onClick="regresar"
+            android:text="@string/btnRegresar"
+            android:textSize="24sp" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

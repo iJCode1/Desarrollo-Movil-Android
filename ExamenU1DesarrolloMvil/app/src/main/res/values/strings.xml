@@ -10,7 +10,7 @@
     <string name="btnImagenes">Imagenes 🌠 🎇</string>
     <string name="btnWeb">Web 🌐</string>
     <string name="btnVideo">Video 🎥</string>
-    <string name="btnReloj">Reloj 🕰</string>
+    <string name="btnReloj">Reloj 🕰📆</string>
     <string name="btnDiferente">Diferente 🌘</string>
     <string name="btnRating">Rating 📈</string>
     <string name="btnAbout">Acerca de 📌❓</string>
@@ -18,4 +18,7 @@
     <string name="txtImagenes">Imagenes 🏙 🌅</string>
     <string name="txtBusqueda">Ingresa tu Busqueda 🔍</string>
     <string name="txtBuscar">Buscar</string>
+    <string name="txtHora">⏰ ʟᴀ ʜᴏʀᴀ ᴇs:</string>
+    <string name="txtFecha">🗓 ʟᴀ ғᴇᴄʜᴀ ᴇs:</string>
+
 </resources>
