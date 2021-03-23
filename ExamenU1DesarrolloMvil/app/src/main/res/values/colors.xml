@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="purple_200">#FFBB86FC</color>
+    <color name="principal">#fce38a</color>
+    <color name="salir">#ec4646</color>
+    <color name="amarillo">#f8dc81</color>
     <color name="purple_500">#FF6200EE</color>
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
@@ -10,5 +13,16 @@
     <color name="operaciones">#810034</color>
     <color name="igual">#fff600</color>
     <color name="borar">#ff005c</color>
-    <color name="avanzado">#ff75a0</color>
+    <color name="avanzado">#ff75a0</color>eb596e
+    <color name="rojoClaro">#eb596e</color>
+    <color name="verdeClaro">#a2d0c1</color>
+    <color name="carneClaro">#ffeebb</color>
+    <color name="moradoclaro">#c9cbff</color>
+    <color name="azulclaro2">#eff8ff</color>
+    <color name="naranjaClaro">#ffb26b</color>
+    <color name="grisclaro">#93abd3</color>
+    <color name="verde2">#f2f4c0</color>
+    <color name="calc">#a6f6f1</color>
+    <color name="verdeLogin">#03c4a1</color>
+
 </resources>

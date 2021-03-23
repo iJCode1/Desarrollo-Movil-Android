@@ -56,7 +56,8 @@
             android:layout_height="wrap_content"
             android:onClick="regresar"
             android:text="@string/btnRegresar"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            app:backgroundTint="@color/salir" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

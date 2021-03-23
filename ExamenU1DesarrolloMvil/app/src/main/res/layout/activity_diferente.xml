@@ -37,7 +37,9 @@
             android:layout_marginTop="30dp"
             android:onClick="mostrarOcultar"
             android:text="@string/txtMostrar2"
-            android:textSize="24sp" />
+            android:textColor="#000000"
+            android:textSize="24sp"
+            app:backgroundTint="@color/amarillo" />
 
         <Button
             android:id="@+id/button16"
@@ -46,7 +48,8 @@
             android:layout_marginTop="5dp"
             android:onClick="regresar"
             android:text="@string/btnRegresar"
-            android:textSize="24sp" />
+            android:textSize="24sp"
+            app:backgroundTint="@color/salir" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

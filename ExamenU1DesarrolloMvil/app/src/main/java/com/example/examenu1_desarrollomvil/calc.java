@@ -22,8 +22,8 @@ public class calc extends AppCompatActivity implements View.OnClickListener{
     boolean raiz;
     boolean flotante;
 
-    Double[] numeros = new Double[20];
-    Double resultado;
+    Double[] valor = new Double[20];
+    Double result;
 
     Button btnCero, btnUno, btnDos, btnTres, btnCuatro, btnCinco, btnSeis, btnSiete, btnOcho, btnNueve;
 
@@ -157,91 +157,91 @@ public class calc extends AppCompatActivity implements View.OnClickListener{
                     break;
                 case R.id.btnResta:
                     resta=true;
-                    numeros[0]=Double.parseDouble(dato1);
-                    tv1.setText(dato1+"-");
+                    valor[0]=Double.parseDouble(dato1);
+                    tv1.setText("");
                     flotante=false;
                     break;
                 case R.id.btnSuma:
                     suma=true;
-                    numeros[0]=Double.parseDouble(dato1);
-                    tv1.setText(dato1+"+");
+                    valor[0]=Double.parseDouble(dato1);
+                    tv1.setText("");
                     flotante=false;
                     break;
                 case R.id.btnMult:
                     mult=true;
-                    numeros[0]=Double.parseDouble(dato1);
-                    tv1.setText(dato1+"*");
+                    valor[0]=Double.parseDouble(dato1);
+                    tv1.setText("");
                     flotante=false;
                     break;
                 case R.id.btnDiv:
                     div=true;
-                    numeros[0]=Double.parseDouble(dato1);
-                    tv1.setText(dato1+"/");
+                    valor[0]=Double.parseDouble(dato1);
+                    tv1.setText("");
                     flotante=false;
                     break;
                 case R.id.btnPot:
                     pot=true;
-                    numeros[0]=Double.parseDouble(dato1);
-                    numeros[1]=Double.parseDouble(dato1);
-                    tv1.setText(dato1+"^");
-                    resultado = Math.pow(numeros[0], numeros[1]);
-                    tv1.setText(String.valueOf(resultado));
+                    valor[0]=Double.parseDouble(dato1);
+                    valor[1]=Double.parseDouble(dato1);
+                    tv1.setText("");
+                    result = Math.pow(valor[0], valor[1]);
+                    tv1.setText(String.valueOf(result));
                     flotante=false;
                     break;
                 case R.id.btnRaiz:
                     raiz=true;
-                    numeros[0]=Double.parseDouble(dato1);
-                    tv1.setText(dato1+"√");
-                    resultado = Math.sqrt(numeros[0]);
-                    tv1.setText(String.valueOf(resultado));
+                    valor[0]=Double.parseDouble(dato1);
+                    tv1.setText("");
+                    result = Math.sqrt(valor[0]);
+                    tv1.setText(String.valueOf(result));
                     flotante=false;
                     break;
                 case R.id.btnSin:
                     sen=true;
-                    numeros[0]=Double.parseDouble(dato1);
-                    tv1.setText(dato1+"Sin");
-                    resultado = Math.sqrt(numeros[0]);
-                    resultado = Math.sin(numeros[0]*Math.PI/180);
+                    valor[0]=Double.parseDouble(dato1);
+                    tv1.setText("");
+                    result = Math.sin(valor[0]*Math.PI/180);
+                    tv1.setText(String.valueOf(result));
                     flotante=false;
                     break;
                 case R.id.btnCos:
                     cos=true;
-                    numeros[0]=Double.parseDouble(dato1);
+                    valor[0]=Double.parseDouble(dato1);
                     tv1.setText(dato1+"Cos");
-                    resultado = Math.cos(numeros[0]*Math.PI/180);
-                    tv1.setText(String.valueOf(resultado));
+                    result = Math.cos(valor[0]*Math.PI/180);
+                    tv1.setText(String.valueOf(result));
                     flotante=false;
                     break;
                 case R.id.btnTan:
                     tan=true;
-                    numeros[0]=Double.parseDouble(dato1);
+                    valor[0]=Double.parseDouble(dato1);
                     tv1.setText(dato1+"Tan");
-                    resultado = Math.tan(numeros[0]*Math.PI/180);
-                    tv1.setText(String.valueOf(resultado));
+                    result = Math.tan(valor[0]*Math.PI/180);
+                    tv1.setText(String.valueOf(result));
                     flotante=false;
                     break;
                 case R.id.btnLog:
                     log=true;
-                    numeros[0]=Double.parseDouble(dato1);
+                    valor[0]=Double.parseDouble(dato1);
                     tv1.setText(dato1+"Log");
-                    resultado = Math.log(numeros[0]);
-                    tv1.setText(String.valueOf(resultado));
+                    result = Math.log(valor[0]);
+                    tv1.setText(String.valueOf(result));
                     flotante=false;
                     break;
                 case R.id.btnIgual:
-                    numeros[1]=Double.parseDouble(dato1);
+                    valor[1]=Double.parseDouble(dato1);
                     if(suma==true){
-                        resultado = numeros[0]+numeros[1];
-                        tv1.setText(String.valueOf(resultado));
+                        result = valor[0]+valor[1];
+                        tv1.setText(String.valueOf(result));
                     }else if(resta==true){
-                        resultado = numeros[1]-numeros[2];
-                        tv1.setText(String.valueOf(resultado));
+                        result = valor[0]-valor[1];
+                        tv1.setText(String.valueOf(result));
                     }else if(mult==true){
-                        resultado = numeros[0]*numeros[1];
-                        tv1.setText(String.valueOf(resultado));
+                        result =  valor[0]*valor[1];
+                        tv1.setText(String.valueOf(result));
                     }else if(div==true){
-                        resultado = numeros[0]/numeros[1];
-                        tv1.setText(String.valueOf(resultado));
+                        result = valor[0]/valor[1];
+                        tv1.setText(String.valueOf(result));
                     }
                     flotante=false;
                     suma=false;
