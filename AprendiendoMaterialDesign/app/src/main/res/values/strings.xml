@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AprendiendoMaterialDesign</string>
+    <string name="txtImagen">Imagen</string>
+    <string name="txtTitulo">Aprendiendo a usar un Card</string>
+    <string name="txtSubtitulo">En Android Studio</string>
+    <string name="txtDescripcion">Aplicación creada para la materia de Desarrollo Movil</string>
+    <string name="txtAccion1">Acción 1</string>
+    <string name="txtAccion2">Acción 2</string>
+</resources>
