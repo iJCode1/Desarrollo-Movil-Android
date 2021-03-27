@@ -72,6 +72,8 @@ public class Opciones extends AppCompatActivity {
     }
 
     public void salir(View view){
+        Toast.makeText(this, "Adios Usuario", Toast.LENGTH_LONG).show();
+
         finishAffinity();
     }
 

@@ -32,7 +32,7 @@ public class Web extends AppCompatActivity {
         if(URL.trim().isEmpty()){
             Toast.makeText(this, "Debes ingresar una palabra", Toast.LENGTH_LONG).show();
         }else{
-            wv1.loadUrl("https://www.google.com/search?q="+URL);
+            wv1.loadUrl(URL);
             wv1.setWebViewClient(new WebViewClient());
         }
     }

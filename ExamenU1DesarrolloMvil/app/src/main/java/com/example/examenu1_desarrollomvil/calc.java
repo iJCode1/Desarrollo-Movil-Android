@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class calc extends AppCompatActivity implements View.OnClickListener{
 
@@ -240,8 +241,13 @@ public class calc extends AppCompatActivity implements View.OnClickListener{
                         result =  valor[0]*valor[1];
                         tv1.setText(String.valueOf(result));
                     }else if(div==true){
-                        result = valor[0]/valor[1];
-                        tv1.setText(String.valueOf(result));
+                        if (valor[1]==0) {
+                            Toast.makeText(this, "No se puede dividir entre 0", Toast.LENGTH_LONG).show();
+                        }else{
+                            result = valor[0]/valor[1];
+                            tv1.setText(String.valueOf(result));
+                        }
+
                     }
                     flotante=false;
                     suma=false;

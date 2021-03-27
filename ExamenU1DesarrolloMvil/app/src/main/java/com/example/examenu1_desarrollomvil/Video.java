@@ -26,9 +26,6 @@ public class Video extends AppCompatActivity {
 
         videov1.setMediaController(mc);
         videov1.start();
-
-
-
     }
 
     public void regresar(View view){
