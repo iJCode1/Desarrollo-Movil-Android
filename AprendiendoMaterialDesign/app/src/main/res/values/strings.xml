@@ -18,4 +18,5 @@
     <string name="txtSubTitulo2">Subtitulo 2</string>
     <string name="txtDesc1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat pulvinar nisi a pellentesque.</string>
     <string name="txtDesc2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat pulvinar nisi a pellentesque.</string>
+    <string name="txtsalir">Salir</string>
 </resources>
