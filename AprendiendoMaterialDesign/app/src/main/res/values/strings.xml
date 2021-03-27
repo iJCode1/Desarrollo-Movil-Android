@@ -6,4 +6,5 @@
     <string name="txtDescripcion">Aplicación creada para la materia de Desarrollo Movil</string>
     <string name="txtAccion1">Acción 1</string>
     <string name="txtAccion2">Acción 2</string>
+    <string name="btnflotante">+</string>
 </resources>
