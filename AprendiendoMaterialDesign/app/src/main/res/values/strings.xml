@@ -7,4 +7,15 @@
     <string name="txtAccion1">Acción 1</string>
     <string name="txtAccion2">Acción 2</string>
     <string name="btnflotante">+</string>
+    <string name="txtHamburger">Menu</string>
+    <string name="txtSearch">Buscar</string>
+    <string name="txtMore1">Opcion 1</string>
+    <string name="txtMore2">Opcion 2</string>
+    <string name="txtMenu">Menú de Opciones</string>
+    <string name="txtTitulo1">Titulo 1</string>
+    <string name="txtTitulo2">Titulo 2</string>
+    <string name="txtSubTitulo1">Subtitulo 1</string>
+    <string name="txtSubTitulo2">Subtitulo 2</string>
+    <string name="txtDesc1">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat pulvinar nisi a pellentesque.</string>
+    <string name="txtDesc2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat pulvinar nisi a pellentesque.</string>
 </resources>
