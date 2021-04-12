@@ -8,6 +8,12 @@
     <string name="action_settings">Settings</string>
 
     <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_altas">Altas</string>
+    <string name="menu_buscar">Buscar</string>
+    <string name="menu_editar">Editar</string>
+    <string name="menu_listado_activo">Listado Activo</string>
+    <string name="menu_listado_inactivo">Listado Inactivoo</string>
+    <string name="menu_informacion">Información</string>
+    <string name="menu_articulo">Articulo</string>
+    <string name="menu_creditos">Credito</string>
 </resources>

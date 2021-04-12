@@ -1,4 +1,4 @@
-package com.example.articulos.ui.gallery;
+package com.example.articulos.ui.buscar;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.articulos.R;
 
-public class GalleryFragment extends Fragment {
+public class BuscarFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private BuscarViewModel buscarViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                new ViewModelProvider(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        buscarViewModel =
+                new ViewModelProvider(this).get(BuscarViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_buscar, container, false);
+        final TextView textView = root.findViewById(R.id.text_slideshow);
+        buscarViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
