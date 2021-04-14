@@ -28,4 +28,28 @@
         android:name="com.example.articulos.ui.editar.EditarFragment"
         android:label="@string/menu_editar"
         tools:layout="@layout/editar_fragment" />
+
+    <fragment
+        android:id="@+id/nav_listActivos"
+        android:name="com.example.articulos.ui.listActivos.listActivos"
+        android:label="@string/menu_listado_activo"
+        tools:layout="@layout/list_activos_fragment" />
+
+    <fragment
+        android:id="@+id/nav_listInactivos"
+        android:name="com.example.articulos.ui.listInactivos.listadoInactivo"
+        android:label="@string/menu_listado_inactivo"
+        tools:layout="@layout/listado_inactivo_fragment" />
+
+    <fragment
+        android:id="@+id/nav_infoArticulos"
+        android:name="com.example.articulos.ui.infoArticulos.infoArticulos"
+        android:label="@string/menu_informacion"
+        tools:layout="@layout/info_articulos_fragment" />
+
+    <fragment
+        android:id="@+id/nav_Creditos"
+        android:name="com.example.articulos.ui.creditos.Creditos"
+        android:label="@string/menu_creditos"
+        tools:layout="@layout/creditos_fragment" />
 </navigation>
