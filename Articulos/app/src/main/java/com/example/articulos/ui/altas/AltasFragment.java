@@ -23,7 +23,7 @@ public class AltasFragment extends Fragment {
         altasViewModel =
                 new ViewModelProvider(this).get(AltasViewModel.class);
         View root = inflater.inflate(R.layout.fragment_altas, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
+        final TextView textView = root.findViewById(R.id.nav_altas);
         altasViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {

@@ -32,9 +32,13 @@
     <string name="sModify">Actualizar</string>
     <string name="sCancel">Cancelar</string>
 
-    <string name="Product_name"></string>
-    <string name="Product_DateDue"></string>
-    <string name="Product_Stock"></string>
-    <!-- <string name=""></string>-->
+    //Hints
+    <string name="Product_name">Nombre del Producto</string>
+    <string name="Product_DateDue">Fecha de Caducidad</string>
+    <string name="Product_Stock">Stock</string>
+    <string name="Product_id">ID del Producto</string>
+    <string name="search_id">ID a Buscar</string>
+    <string name="img">Imagen Producto</string>
+    <string name="todo">TODO</string>
 
 </resources>
