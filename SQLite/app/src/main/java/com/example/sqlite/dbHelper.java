@@ -1,21 +1,15 @@
 package com.example.sqlite;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import androidx.annotation.Nullable;
-
-import com.example.sqlite.MainActivity;
-
 public class dbHelper extends SQLiteOpenHelper {
 
-    public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "ejemplo.db";
-
-    private static final String SQL_CREAR  = "create table productos(codigo int primary key autoincrement, description text not null, precio real)";
+    private static final String SQL_CREAR =
+            "create table productos(codigo int primary key, " +
+                    "description text not null, " +
+                    "precio real)";
 
 
     public dbHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -32,6 +26,7 @@ public class dbHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
     }
+}
 
 /*
     public void agregar(String nombre){
@@ -97,6 +92,3 @@ public class dbHelper extends SQLiteOpenHelper {
         }
     }
  */
-
-
-}
