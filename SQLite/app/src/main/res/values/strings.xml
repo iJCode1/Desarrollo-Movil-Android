@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">SQLite</string>
+    <string name="txtBienvenida">Bienvenid@ Usuari@ 🙌🏼</string>
+    <!-- Datos de Input -->
+    <string name="txtCodigo">Código del Producto 🎰</string>
+    <string name="txtDescripcion">Descripción del Producto 🧾</string>
+    <string name="txtPrecio">Precio del Producto 💵</string>
+
+    <!-- Datos de Botones -->
+    <string name="txtRegistrar">Registrar Producto 💾</string>
+    <string name="txtBuscar">Buscar Producto 🔎</string>
+    <string name="txtModificar">Modificar Producto ✏️</string>
+    <string name="txtEliminar">Eliminar 🧨</string>
+</resources>
