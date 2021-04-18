@@ -23,7 +23,7 @@ public class BuscarFragment extends Fragment {
         buscarViewModel =
                 new ViewModelProvider(this).get(BuscarViewModel.class);
         View root = inflater.inflate(R.layout.fragment_buscar, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
+        final TextView textView = root.findViewById(R.id.textBuscar);
         buscarViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {

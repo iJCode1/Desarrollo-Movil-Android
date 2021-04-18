@@ -8,9 +8,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -19,6 +17,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/text_altas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -27,6 +26,7 @@
                 android:textStyle="bold" />
 
             <ImageView
+                android:id="@+id/fa_imagen"
                 android:layout_width="200dp"
                 android:layout_height="200dp"
                 android:layout_gravity="center"
@@ -51,50 +51,60 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:hint="@string/Product_DateDue"
-                android:textColorHint="@color/white">
+                android:orientation="horizontal"
+                android:layout_margin="15dp">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/fa_caducidad"
-                    android:layout_width="match_parent"
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:layout_margin="5dp"
+                    android:hint="@string/Product_DateDue"
+                    android:textColorHint="@color/white">
 
-            </com.google.android.material.textfield.TextInputLayout>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/fa_caducidad"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:adjustViewBounds="true"/>
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/calendario" />
+
+            </LinearLayout>
+
 
             <androidx.appcompat.widget.AppCompatSpinner
                 android:id="@+id/fa_categoria"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:backgroundTint="@color/white"
-                android:background="@android:color/transparent"/>
+                android:background="@android:color/transparent"
+                android:backgroundTint="@color/white" />
 
             <androidx.appcompat.widget.AppCompatSpinner
                 android:id="@+id/fa_status"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp"
-                android:backgroundTint="@color/white"
-                android:background="@android:color/transparent"/>
+                android:background="@android:color/transparent"
+                android:backgroundTint="@color/white" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:hint="@string/Product_DateDue"
+                android:hint="@string/Product_Stock"
                 android:textColorHint="@color/white">
 
             <com.google.android.material.textfield.TextInputEditText

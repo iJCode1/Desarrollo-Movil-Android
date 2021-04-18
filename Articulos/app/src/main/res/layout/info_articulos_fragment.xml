@@ -18,6 +18,7 @@
             android:layout_height="wrap_content"
             android:text="@string/menu_informacion"
             android:layout_margin="15dp"
+            android:gravity="center"
             android:textSize="16dp"/>
 
         <ImageButton
@@ -37,9 +38,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginBottom="15dp">
                 <!--app:cardUserCompatPadding = "true"-->
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -51,7 +54,7 @@
                         android:layout_height="200dp"
                         android:layout_gravity="center"
                         android:layout_margin="60dp"
-                        android:src="@drawable/ic_menu_camera"/>
+                        android:src="@drawable/camera"/>
                     <TextView
                         android:id="@+id/fi_info"
                         android:layout_width="match_parent"
@@ -63,7 +66,7 @@
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
                         <androidx.appcompat.widget.AppCompatImageButton
-                            android:id="@+id/fi_dialogo"
+                            android:id="@+id/fi_delete"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:src="@drawable/ic_menu_camera"
