@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     ListView listViewProductos;
     ArrayList<String> lista;
     ArrayAdapter adaptador;
+    Spinner spProductos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,15 +33,17 @@ public class MainActivity extends AppCompatActivity {
         et_descripcion = (EditText)findViewById(R.id.txtDescripcion);
         et_precio = (EditText)findViewById(R.id.txtPrecio);
 
-        listViewProductos = (ListView)findViewById(R.id.listViewProductos);
+        //listViewProductos = (ListView)findViewById(R.id.listViewProductos);
 
+        spProductos = (Spinner)findViewById(R.id.spProductos);
     }
 
     public void Mostrar(View view){
         AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(getApplicationContext(), "administracion", null, 1);
         lista = admin.llenar_listView();
         adaptador = new ArrayAdapter(this, android.R.layout.simple_list_item_1, lista);
-        listViewProductos.setAdapter(adaptador);
+        //listViewProductos.setAdapter(adaptador);
+        spProductos.setAdapter(adaptador);
     }
 
     //Méotdo para dar de alta los productos

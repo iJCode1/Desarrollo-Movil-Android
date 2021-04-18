@@ -28,7 +28,7 @@ public class AdminSQLiteOpenHelper extends SQLiteOpenHelper {
     public ArrayList llenar_listView(){
         ArrayList<String> lista = new ArrayList<>();
         SQLiteDatabase db = this.getWritableDatabase();
-        String consulta = "Select * from articulos order by descripcion asc";
+        String consulta = "Select * from articulos order by descripcion desc";
         Cursor registros = db.rawQuery(consulta, null);
         if(registros.moveToFirst()){
             do{

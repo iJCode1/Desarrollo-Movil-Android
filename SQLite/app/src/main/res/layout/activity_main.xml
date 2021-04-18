@@ -86,7 +86,7 @@
                                     android:layout_margin="5dp"
                                     android:onClick="Registrar"
                                     android:text="@string/txtRegistrar"
-                                    android:textColor="@color/cRegistrar" />
+                                    android:textColor="@color/teal_700" />
 
                                 <Button
                                     android:id="@+id/txtBuscar"
@@ -133,11 +133,11 @@
                                     android:textColor="@color/purple_500" />
 
 
-                                <ListView
-                                    android:id="@+id/listViewProductos"
+                                <Spinner
+                                    android:id="@+id/spProductos"
                                     android:layout_width="match_parent"
-                                    android:layout_height="107dp"
-                                    android:backgroundTint="@color/white" />
+                                    android:layout_height="48dp"
+                                    android:layout_weight="1" />
 
                             </com.google.android.material.textfield.TextInputLayout>
                         </com.google.android.material.textfield.TextInputLayout>
