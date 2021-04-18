@@ -12,132 +12,128 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private EditText etCodigo, etDescripcion, etPrecio;
+    private EditText et_codigo, et_descripcion, et_precio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        etCodigo = (EditText)findViewById(R.id.txtCodigo);
-        etDescripcion = (EditText)findViewById(R.id.txtDescripcion);
-        etPrecio = (EditText)findViewById(R.id.txtPrecio);
+        et_codigo = (EditText)findViewById(R.id.txtCodigo);
+        et_descripcion = (EditText)findViewById(R.id.txtDescripcion);
+        et_precio = (EditText)findViewById(R.id.txtPrecio);
     }
 
-    //Método para dar de alta a los productos.
+    //Méotdo para dar de alta los productos
     public void Registrar(View view){
-        dbHelper helper = new dbHelper(this, "productos", null, 1);
-        SQLiteDatabase db = helper.getWritableDatabase(); //Abrir BD en modo lectura y escritura
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
+        SQLiteDatabase BaseDeDatos = admin.getWritableDatabase();
 
-        //Obteniendo los valores que ingreso el usuario
-        String sCodigo = etCodigo.getText().toString();
-        String sDescripcion = etDescripcion.getText().toString();
-        String sPrecio = etPrecio.getText().toString();
+        String codigo = et_codigo.getText().toString();
+        String descripcion = et_descripcion.getText().toString();
+        String precio = et_precio.getText().toString();
 
-        //Validando si los datos fueron ingresados o no
-        if(!sCodigo.trim().isEmpty() && !sDescripcion.trim().isEmpty() && !sPrecio.trim().isEmpty()){
+        if(!codigo.isEmpty() && !descripcion.isEmpty() && !precio.isEmpty()){
             ContentValues registro = new ContentValues();
-            registro.put("codigo", sCodigo);
-            registro.put("descripcion", sDescripcion);
-            registro.put("precio", sPrecio);
 
-            db.insert("productos", null, registro);
-            db.close();
+            registro.put("codigo", codigo);
+            registro.put("descripcion", descripcion);
+            registro.put("precio", precio);
 
-            //Limpiando los Datos
-            etCodigo.setText("");
-            etDescripcion.setText("");
-            etPrecio.setText("");
+            BaseDeDatos.insert("articulos", null, registro);
 
-            Toast.makeText(this, "El registro fue exitoso!", Toast.LENGTH_LONG).show();
-        }else {
-            Toast.makeText(this, "Debes ingresar todos los datos", Toast.LENGTH_LONG).show();
+            BaseDeDatos.close();
+            et_codigo.setText("");
+            et_descripcion.setText("");
+            et_precio.setText("");
+
+            Toast.makeText(this,"Registro exitoso", Toast.LENGTH_SHORT).show();
+        } else{
+            Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
         }
     }
 
     //Método para consultar un producto
     public void Buscar(View view){
-        dbHelper helper = new dbHelper(this, "productos", null, 1);
-        SQLiteDatabase db = helper.getWritableDatabase(); //Abrir BD en modo lectura y escritura
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
+        SQLiteDatabase BaseDeDatabase = admin.getWritableDatabase();
 
-        //Obteniendo el código de producto que ingreso el usuario
-        String sCodigo = etCodigo.getText().toString();
+        String codigo = et_codigo.getText().toString();
 
-        //Validando si el código fue o no ingresado
-        if(!sCodigo.trim().isEmpty()){
-            //Haciendo la busqueda del código
-            Cursor fila = db.rawQuery("select descripcion, precio from productos where codigo = "+sCodigo, null);
+        if(!codigo.isEmpty()){
+            Cursor fila = BaseDeDatabase.rawQuery
+                    ("select descripcion, precio from articulos where codigo =" + codigo, null);
 
-            //SI la consulta devolvio valores (Si existe el código)
             if(fila.moveToFirst()){
-                etDescripcion.setText(fila.getString(0));
-                etPrecio.setText(fila.getString(1));
-                db.close();
-            }else{
-                Toast.makeText(this, "No se encontro el producto del código ingresado", Toast.LENGTH_LONG).show();
-                db.close();
+                et_descripcion.setText(fila.getString(0));
+                et_precio.setText(fila.getString(1));
+                BaseDeDatabase.close();
+            } else {
+                Toast.makeText(this,"No existe el artículo", Toast.LENGTH_SHORT).show();
+                BaseDeDatabase.close();
             }
-        }else {
-            Toast.makeText(this, "Debes ingresar el código del producto", Toast.LENGTH_LONG).show();
+
+        } else {
+            Toast.makeText(this, "Debes introducir el código del artículo", Toast.LENGTH_SHORT).show();
         }
     }
 
     //Método para eliminar un producto
     public void Eliminar(View view){
-        dbHelper helper = new dbHelper(this, "productos", null, 1);
-        SQLiteDatabase db = helper.getWritableDatabase(); //Abrir BD en modo lectura y escritura
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper
+                (this, "administracion", null, 1);
+        SQLiteDatabase BaseDatabase = admin.getWritableDatabase();
 
-        //Obteniendo el código de producto que ingreso el usuario
-        String sCodigo = etCodigo.getText().toString();
+        String codigo = et_codigo.getText().toString();
 
-        //Validando si el código fue o no ingresado
-        if(!sCodigo.trim().isEmpty()){
-            //Haciendo la busqueda del código
-            int cantidad = db.delete("productos", "codigo=" + sCodigo, null);
-            db.close();
+        if(!codigo.isEmpty()){
 
-            //Limpiando los Datos
-            etCodigo.setText("");
-            etDescripcion.setText("");
-            etPrecio.setText("");
+            int cantidad = BaseDatabase.delete("articulos", "codigo=" + codigo, null);
+            BaseDatabase.close();
+
+            et_codigo.setText("");
+            et_descripcion.setText("");
+            et_precio.setText("");
 
             if(cantidad == 1){
-                Toast.makeText(this, "Producto eliminado satisfactoriamente!", Toast.LENGTH_LONG).show();
-            }else{
-                Toast.makeText(this, "El producto no existe", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "Artículo eliminado exitosamente", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "El artículo no existe", Toast.LENGTH_SHORT).show();
             }
-        }else {
-            Toast.makeText(this, "Debes ingresar el código del producto", Toast.LENGTH_LONG).show();
+
+        } else {
+            Toast.makeText(this, "Debes de introducir el código del artículo", Toast.LENGTH_SHORT).show();
         }
     }
 
-    //Método para modificar los datos de un producto
-    public void Modificar(View view){
-        dbHelper helper = new dbHelper(this, "productos", null, 1);
-        SQLiteDatabase db = helper.getWritableDatabase(); //Abrir BD en modo lectura y escritura
+    //Método para modificar un producto
+    public void Modificar(View view) {
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(this, "administracion", null, 1);
+        SQLiteDatabase BaseDatabase = admin.getWritableDatabase();
 
-        //Obteniendo los valores que ingreso el usuario
-        String sCodigo = etCodigo.getText().toString();
-        String sDescripcion = etDescripcion.getText().toString();
-        String sPrecio = etPrecio.getText().toString();
+        String codigo = et_codigo.getText().toString();
+        String descripcion = et_descripcion.getText().toString();
+        String precio = et_precio.getText().toString();
 
-        if(!sCodigo.trim().isEmpty() && !sDescripcion.trim().isEmpty() && !sPrecio.trim().isEmpty()){
+        if (!codigo.isEmpty() && !descripcion.isEmpty() && !precio.isEmpty()) {
+
             ContentValues registro = new ContentValues();
-            registro.put("codigo", sCodigo);
-            registro.put("descripcion", sDescripcion);
-            registro.put("precio", sPrecio);
-            //Haciendo la busqueda del código
-            int cantidad = db.update("productos", registro, "codigo="+ sCodigo, null);
-            db.close();
+            registro.put("codigo", codigo);
+            registro.put("descripcion", descripcion);
+            registro.put("precio", precio);
 
-            if(cantidad == 1){
-                Toast.makeText(this, "Producto modificado satisfactoriamente!", Toast.LENGTH_LONG).show();
-            }else{
-                Toast.makeText(this, "El producto no existe", Toast.LENGTH_LONG).show();
+            int cantidad = BaseDatabase.update("articulos", registro, "codigo=" + codigo, null);
+            BaseDatabase.close();
+
+            if (cantidad == 1) {
+                Toast.makeText(this, "Artículo modificado correctamente", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "El artículo no existe", Toast.LENGTH_SHORT).show();
             }
-        }else {
-            Toast.makeText(this, "Debes ingresar todos los datos", Toast.LENGTH_LONG).show();
-        }
 
+        } else {
+            Toast.makeText(this, "Debes llenar todos los campos", Toast.LENGTH_SHORT).show();
+        }
     }
+
 }

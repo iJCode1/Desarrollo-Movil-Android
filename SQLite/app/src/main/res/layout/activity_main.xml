@@ -17,109 +17,120 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/txtBienvenida"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="10dp"
-                    android:gravity="center"
-                    android:text="@string/txtBienvenida"
-                    android:textSize="24sp" />
+                    android:orientation="vertical" >
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="269dp"
-                    android:layout_height="149dp"
-                    android:layout_gravity="center"
-                    android:contentDescription="@string/txtBienvenida"
-                    app:srcCompat="@drawable/user" />
-
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="-10dp">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtCodigo"
+                    <TextView
+                        android:id="@+id/txtBienvenida"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="@string/txtCodigo"
-                        android:inputType="number" />
+                        android:layout_marginBottom="10dp"
+                        android:gravity="center"
+                        android:text="@string/txtBienvenida"
+                        android:textSize="24sp" />
+
+                    <ImageView
+                        android:id="@+id/imageView"
+                        android:layout_width="269dp"
+                        android:layout_height="149dp"
+                        android:layout_gravity="center"
+                        android:contentDescription="@string/txtBienvenida"
+                        app:srcCompat="@drawable/user" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="-10dp">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/txtDescripcion"
+                            android:id="@+id/txtCodigo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="@string/txtDescripcion" />
+                            android:hint="@string/txtCodigo"
+                            android:inputType="number" />
 
                         <com.google.android.material.textfield.TextInputLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
                             <com.google.android.material.textfield.TextInputEditText
-                                android:id="@+id/txtPrecio"
+                                android:id="@+id/txtDescripcion"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:hint="@string/txtPrecio"
-                                android:inputType="numberDecimal" />
+                                android:hint="@string/txtDescripcion" />
 
-                            <Button
-                                android:id="@+id/txtRegistrar"
-                                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_margin="10dp"
-                                android:onClick="Registrar"
-                                android:text="@string/txtRegistrar"
-                                android:textColor="@color/cRegistrar" />
+                            <com.google.android.material.textfield.TextInputLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
 
-                            <Button
-                                android:id="@+id/txtBuscar"
-                                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_margin="10dp"
-                                android:onClick="Buscar"
-                                android:text="@string/txtBuscar"
-                                android:textColor="@color/cBuscar" />
+                                <com.google.android.material.textfield.TextInputEditText
+                                    android:id="@+id/txtPrecio"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:hint="@string/txtPrecio"
+                                    android:inputType="numberDecimal" />
 
-                            <Button
-                                android:id="@+id/txtModificar"
-                                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_margin="10dp"
-                                android:onClick="Modificar"
-                                android:text="@string/txtModificar"
-                                android:textColor="@color/cModificar" />
+                                <Button
+                                    android:id="@+id/txtRegistrar"
+                                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="10dp"
+                                    android:onClick="Registrar"
+                                    android:text="@string/txtRegistrar"
+                                    android:textColor="@color/cRegistrar" />
 
-                            <Button
-                                android:id="@+id/txteliminar"
-                                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="center"
-                                android:layout_margin="10dp"
-                                android:onClick="Eliminar"
-                                android:text="@string/txtEliminar"
-                                android:textColor="@color/cEliminar" />
+                                <Button
+                                    android:id="@+id/txtBuscar"
+                                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="10dp"
+                                    android:onClick="Buscar"
+                                    android:text="@string/txtBuscar"
+                                    android:textColor="@color/cBuscar" />
+
+                                <Button
+                                    android:id="@+id/txtModificar"
+                                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="10dp"
+                                    android:onClick="Modificar"
+                                    android:text="@string/txtModificar"
+                                    android:textColor="@color/cModificar" />
+
+                                <Button
+                                    android:id="@+id/txteliminar"
+                                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="10dp"
+                                    android:onClick="Eliminar"
+                                    android:text="@string/txtEliminar"
+                                    android:textColor="@color/cEliminar" />
+                            </com.google.android.material.textfield.TextInputLayout>
                         </com.google.android.material.textfield.TextInputLayout>
                     </com.google.android.material.textfield.TextInputLayout>
-                </com.google.android.material.textfield.TextInputLayout>
-            </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+
+        </LinearLayout>
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
