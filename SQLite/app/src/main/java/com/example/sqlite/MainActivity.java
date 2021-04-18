@@ -7,12 +7,20 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.ListView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     private EditText et_codigo, et_descripcion, et_precio;
+
+    ListView listViewProductos;
+    ArrayList<String> lista;
+    ArrayAdapter adaptador;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +30,16 @@ public class MainActivity extends AppCompatActivity {
         et_codigo = (EditText)findViewById(R.id.txtCodigo);
         et_descripcion = (EditText)findViewById(R.id.txtDescripcion);
         et_precio = (EditText)findViewById(R.id.txtPrecio);
+
+        listViewProductos = (ListView)findViewById(R.id.listViewProductos);
+
+    }
+
+    public void Mostrar(View view){
+        AdminSQLiteOpenHelper admin = new AdminSQLiteOpenHelper(getApplicationContext(), "administracion", null, 1);
+        lista = admin.llenar_listView();
+        adaptador = new ArrayAdapter(this, android.R.layout.simple_list_item_1, lista);
+        listViewProductos.setAdapter(adaptador);
     }
 
     //Méotdo para dar de alta los productos

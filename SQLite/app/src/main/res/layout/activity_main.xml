@@ -22,10 +22,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -42,8 +38,8 @@
 
                     <ImageView
                         android:id="@+id/imageView"
-                        android:layout_width="269dp"
-                        android:layout_height="149dp"
+                        android:layout_width="243dp"
+                        android:layout_height="98dp"
                         android:layout_gravity="center"
                         android:contentDescription="@string/txtBienvenida"
                         app:srcCompat="@drawable/user" />
@@ -87,7 +83,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:layout_margin="10dp"
+                                    android:layout_margin="5dp"
                                     android:onClick="Registrar"
                                     android:text="@string/txtRegistrar"
                                     android:textColor="@color/cRegistrar" />
@@ -98,7 +94,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:layout_margin="10dp"
+                                    android:layout_margin="5dp"
                                     android:onClick="Buscar"
                                     android:text="@string/txtBuscar"
                                     android:textColor="@color/cBuscar" />
@@ -109,7 +105,7 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:layout_margin="10dp"
+                                    android:layout_margin="5dp"
                                     android:onClick="Modificar"
                                     android:text="@string/txtModificar"
                                     android:textColor="@color/cModificar" />
@@ -120,15 +116,36 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_gravity="center"
-                                    android:layout_margin="10dp"
+                                    android:layout_margin="5dp"
                                     android:onClick="Eliminar"
                                     android:text="@string/txtEliminar"
                                     android:textColor="@color/cEliminar" />
+
+                                <Button
+                                    android:id="@+id/txtMostrar"
+                                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_margin="5dp"
+                                    android:onClick="Mostrar"
+                                    android:text="@string/txtMostrar"
+                                    android:textColor="@color/purple_500" />
+
+
+                                <ListView
+                                    android:id="@+id/listViewProductos"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="107dp"
+                                    android:backgroundTint="@color/white" />
+
                             </com.google.android.material.textfield.TextInputLayout>
                         </com.google.android.material.textfield.TextInputLayout>
+
+
                     </com.google.android.material.textfield.TextInputLayout>
                 </LinearLayout>
-            </ScrollView>
+
 
         </LinearLayout>
 

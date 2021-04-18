@@ -11,4 +11,6 @@
     <string name="txtBuscar">Buscar Producto 🔎</string>
     <string name="txtModificar">Modificar Producto ✏️</string>
     <string name="txtEliminar">Eliminar 🧨</string>
+
+    <string name="txtMostrar">Mostrar 👀</string>
 </resources>
