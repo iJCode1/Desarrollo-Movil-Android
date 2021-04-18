@@ -15,7 +15,7 @@ public class dbHelper extends SQLiteOpenHelper {
     public static final int DATABASE_VERSION = 1;
     public static final String DATABASE_NAME = "ejemplo.db";
 
-    private static final String SQL_CREAR  = "create table articulos(codigo int primary key autoincrement, description text not null, precio real)";
+    private static final String SQL_CREAR  = "create table productos(codigo int primary key autoincrement, description text not null, precio real)";
 
 
     public dbHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {

@@ -44,37 +44,37 @@
                     app:srcCompat="@drawable/user" />
 
                 <com.google.android.material.textfield.TextInputLayout
-                    android:id="@+id/txtCodigo"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="-10dp">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/txtCodigo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:inputType="number"
-                        android:hint="@string/txtCodigo" />
+                        android:hint="@string/txtCodigo"
+                        android:inputType="number" />
 
                     <com.google.android.material.textfield.TextInputLayout
-                        android:id="@+id/txtDescripcion"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
                         <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/txtDescripcion"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="@string/txtDescripcion" />
 
                         <com.google.android.material.textfield.TextInputLayout
-                            android:id="@+id/txtPrecio"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
                             <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/txtPrecio"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:inputType="numberDecimal"
-                                android:hint="@string/txtPrecio" />
+                                android:hint="@string/txtPrecio"
+                                android:inputType="numberDecimal" />
 
                             <Button
                                 android:id="@+id/txtRegistrar"
