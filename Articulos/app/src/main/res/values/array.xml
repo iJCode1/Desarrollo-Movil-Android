@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="o0">
+        <item>No opción seleccionada</item>
+    </string-array>
+
+    <string-array name="category">
+        <item>Hogar</item>
+        <item>Salud</item>
+        <item>Jardin</item>
+        <item>Cocina</item>
+        <item>Niños</item>
+    </string-array>
+
+    <string-array name="status">
+        <item>Activo</item>
+        <item>Inactivo</item>
+    </string-array>
+</resources>

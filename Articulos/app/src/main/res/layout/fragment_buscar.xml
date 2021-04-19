@@ -108,6 +108,7 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/fb_calendario"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
                     android:layout_weight="1"
@@ -156,25 +157,25 @@
                 android:layout_margin="15dp">
 
                 <com.google.android.material.button.MaterialButton
+                    android:id="@+id/fa_btnUpdate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:elevation="15dp"
+                    android:layout_marginRight="10sp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/cVerde"
+                    android:text="@string/sModify"/>
+
+                <com.google.android.material.button.MaterialButton
                     android:id="@+id/fa_btnCancel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:elevation="15dp"
                     android:layout_weight="1"
-                    android:layout_marginRight="10sp"
-                    android:backgroundTint="@color/design_default_color_error"
+                    android:backgroundTint="@color/cRojo"
                     android:text="@string/sCancel"/>
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/fa_btnUpdate"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:elevation="15dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@android:color/holo_green_dark"
-                    android:text="@string/sModify"/>
             </LinearLayout>
 
         </LinearLayout>

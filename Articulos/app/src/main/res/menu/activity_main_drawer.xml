@@ -9,39 +9,39 @@
         </group>
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
+            android:icon="@drawable/home"
             android:title="@string/menu_home" />
         <item
             android:id="@+id/nav_altas"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/alta"
             android:title="@string/menu_altas" />
         <item
             android:id="@+id/nav_editar"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/editar"
             android:title="@string/menu_editar" />
         <item
             android:id="@+id/nav_buscar"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/search"
             android:title="@string/menu_buscar" />
 
         <item
             android:id="@+id/nav_listActivos"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/activo"
             android:title="@string/menu_listado_activo" />
 
         <item
             android:id="@+id/nav_listInactivos"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/inactivo"
             android:title="@string/menu_listado_inactivo" />
 
         <item
             android:id="@+id/nav_infoArticulos"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/info"
             android:title="@string/menu_informacion" />
 
         <item
             android:id="@+id/nav_Creditos"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/student"
             android:title="@string/menu_creditos" />
     </group>
 </menu>
