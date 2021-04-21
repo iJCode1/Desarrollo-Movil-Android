@@ -81,7 +81,7 @@ public class Productos {
         this.category = category;
     }
 
-    public boolean isStatus() {
+    public boolean getStatus() {
         return status;
     }
 
