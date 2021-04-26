@@ -37,7 +37,7 @@ import java.util.Date;
 
 import static android.app.Activity.RESULT_OK;
 
-public class AltasFragment extends Fragment implements DatePickerDialog.OnDateSetListener {
+public class AltasFragment extends Fragment implements View.OnClickListener,DatePickerDialog.OnDateSetListener {
 
     private AltasViewModel altasViewModel;
     private EditText etNombre, etCaducidad, etStock;
@@ -93,10 +93,10 @@ public class AltasFragment extends Fragment implements DatePickerDialog.OnDateSe
         spCategoria.setAdapter(catAdapter);
         spStatus.setAdapter(statusAdapter);
 
-        btnLimpiar.setOnClickListener((View.OnClickListener) this);
-        btnAgregar.setOnClickListener((View.OnClickListener) this);
-        ivPicture.setOnClickListener((View.OnClickListener) this);
-        btnCalendario.setOnClickListener((View.OnClickListener) this);
+        btnLimpiar.setOnClickListener(this);
+        btnAgregar.setOnClickListener(this);
+        ivPicture.setOnClickListener(this);
+        btnCalendario.setOnClickListener(this);
     }
 
     private void clearFields(){
@@ -142,18 +142,19 @@ public class AltasFragment extends Fragment implements DatePickerDialog.OnDateSe
 
     private File createPicture() throws IOException {
         timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        pictureName = "JPG" + timeStamp + "_";
+        pictureName = "JPEG" + timeStamp + "_";
         storageDir = getActivity().getExternalFilesDir(Environment.DIRECTORY_PICTURES);
-
         File image = File.createTempFile(pictureName, ".jpg", storageDir);
         currentPath = image.getAbsolutePath();
 
         return image;
+
     }
 
     public void onActivityResult(int requestCode, int resultCode, Intent data){
         if(requestCode == REQUEST_TAKE_PHOTO && resultCode == RESULT_OK){
-            ivPicture.setImageURI(FileProvider.getUriForFile(getContext(), "com.exampple.articulos", picture));
+            ivPicture.setImageURI(FileProvider.getUriForFile(getContext(), "com.example.articulos", picture));
+            Toast.makeText(getContext(), "Siiiiiii", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -188,10 +189,24 @@ public class AltasFragment extends Fragment implements DatePickerDialog.OnDateSe
             case R.id.fa_btnAdd:
                 if(!validarFields()){
                     Toast.makeText(getContext(), "Completa los campos por favor", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getContext(), etNombre.getText().toString(), Toast.LENGTH_LONG).show();
                 }else{
+                    Toast.makeText(getContext(),
+                            "Nombre: "+etNombre.getText().toString() +
+                                    "Caducidad: "+etCaducidad.getText().toString() +
+                                    "URL Imagen: "+currentPath +
+                                    "Categoria: "+spCategoria.getSelectedItem().toString() +
+                                    "Status: "+getStatus(spStatus.getSelectedItem().toString()) +
+                                    "Stock: "+etStock.getText().toString(),
+                            Toast.LENGTH_LONG).show();
                     try {
                         Productos p = new Productos(
-                                Integer.parseInt(etStock.getText().toString()), etNombre.getText().toString(), currentPath, etCaducidad.getText().toString(), spCategoria.getSelectedItem().toString(), getStatus(spStatus.getSelectedItem().toString()));
+                                Integer.parseInt(etStock.getText().toString()),
+                                etNombre.getText().toString(),
+                                currentPath,
+                                etCaducidad.getText().toString(),
+                                spCategoria.getSelectedItem().toString(),
+                                getStatus(spStatus.getSelectedItem().toString()));
 
                         if(utilities.createProduct(p)){
                             Toast.makeText(getContext(), "Producto creado", Toast.LENGTH_LONG).show();
