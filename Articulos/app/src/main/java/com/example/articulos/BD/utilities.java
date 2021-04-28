@@ -20,23 +20,23 @@ public class utilities {
 
     public static final String DATABASE_NAME = "db_products";
     public static final int DATABASE_VERSION = 1;
-    public static Base CONN = null;
+    public static Base conn = null;
     public static ContentValues CV = null;
 
-    public static final String CREATE_PRODUCTS_TABLE = "CREATE TABLE" + TABLE_NAME +
-            "(" + ID_ROW + "INTEGER," +
-            STOCK_ROW + "INTEGER," +
-            NAME_ROW + "TEXT," +
-            PIC_ROW + "TEXT," +
-            DD_ROW + "TEXT," +
-            CAT_ROW + "TEXT," +
-            STATUS_ROW + "BOOLEAN)";
+    public static final String CREATE_PRODUCTS_TABLE = "CREATE TABLE " + TABLE_NAME +
+            " (" + ID_ROW + " INTEGER, " +
+            STOCK_ROW + " INTEGER, " +
+            NAME_ROW + " TEXT, " +
+            PIC_ROW + " TEXT, " +
+            DD_ROW + " TEXT, " +
+            CAT_ROW + " TEXT, " +
+            STATUS_ROW + " BOOLEAN );";
 
     public static final String DROP_TABLE_PRODUCTS = "DROP TABLE IF EXISTS " + TABLE_NAME;
 
     public static boolean initDataBase(Context context){
-        CONN = new Base(context, DATABASE_NAME, null, DATABASE_VERSION);
-        if(CONN !=null){
+        conn = new Base(context, DATABASE_NAME, null, DATABASE_VERSION);
+        if(conn !=null){
             return true;
         }else{
             return false;
@@ -44,32 +44,32 @@ public class utilities {
     }
 
     private static SQLiteDatabase getWritableConnection(){
-        return CONN.getWritableDatabase();
+        return conn.getWritableDatabase();
     }
 
-    private static SQLiteDatabase getRedeadableConnection(){
-        return CONN.getReadableDatabase();
+    private static SQLiteDatabase getReadableConnection(){
+        return conn.getReadableDatabase();
     }
 
     public static void closeDatabase(){
-        CONN.close();
+        conn.close();
     }
 
-    public static boolean createProduct(Productos producto){
+    public static boolean createProduct(Productos product){
         CV = new ContentValues();
         CV.put(ID_ROW, getLastID());
-        CV.put(NAME_ROW, producto.getName());
-        CV.put(STOCK_ROW, producto.getStock());
-        CV.put(PIC_ROW, producto.getPic());
-        CV.put(DD_ROW, producto.getDataDue());
-        CV.put(CAT_ROW, producto.getCategory());
-        CV.put(STATUS_ROW, producto.getStatus());
+        CV.put(NAME_ROW, product.getName());
+        CV.put(STOCK_ROW, product.getStock());
+        CV.put(PIC_ROW, product.getPic());
+        CV.put(DD_ROW, product.getDataDue());
+        CV.put(CAT_ROW, product.getCategory());
+        CV.put(STATUS_ROW, product.getStatus());
 
         return (getWritableConnection().insert(TABLE_NAME, null, CV)!=-1) ? true: false;
     }
 
     public static Integer getLastID(){
-        Cursor cursor = getRedeadableConnection().rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE ID = (SELECT MAX(ID)" + "FROM" + TABLE_NAME +"); ", null);
+        Cursor cursor = getReadableConnection().rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE ID = (SELECT MAX(ID) FROM " + TABLE_NAME +"); ", null);
 
         if (cursor.getCount()>0){
             if (cursor.moveToFirst()){
@@ -79,8 +79,8 @@ public class utilities {
         return 1;
     }
 
-    public static Productos searchProducto(int id){
-        Cursor cursor = getRedeadableConnection().rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE" + ID_ROW + "=" + id +"); ", null);
+    public static Productos searchProduct(int id){
+        Cursor cursor = getReadableConnection().rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE" + ID_ROW + "=" + id +"); ", null);
 
         if(cursor.moveToFirst()){
             Productos p = new Productos();
@@ -98,7 +98,7 @@ public class utilities {
         return null;
     }
 
-    public static boolean updateProductos(Productos producto){
+    public static boolean updateProduct(Productos producto){
         CV = new ContentValues();
         CV.put(ID_ROW, producto.getId());
         CV.put(NAME_ROW, producto.getName());
@@ -108,16 +108,17 @@ public class utilities {
         CV.put(CAT_ROW, producto.getCategory());
         CV.put(STATUS_ROW, producto.getStatus());
 
-        return (getWritableConnection().update(TABLE_NAME, CV, ID_ROW + "=" + String.valueOf(producto.getId()), null)!=-0) ? true: false;
+        return (getWritableConnection().update(TABLE_NAME, CV, ID_ROW + " = " + String.valueOf(producto.getId()), null)!=-0) ? true: false;
     }
 
     public static ArrayList<Productos> getListActive(){
         ArrayList<Productos> list = new ArrayList<>();
-        Cursor cursor = getRedeadableConnection().rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + STATUS_ROW + "=" + 1, null);
+        Cursor cursor = getReadableConnection().rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + STATUS_ROW + " = " + 1, null);
 
         if(cursor.moveToFirst()){
-            Productos p = new Productos();
+
             do{
+                Productos p = new Productos();
                 p.setId(cursor.getInt(0));
                 p.setStock(cursor.getInt(1));
                 p.setName(cursor.getString(2));
@@ -133,11 +134,12 @@ public class utilities {
 
     public static ArrayList<Productos> getListHidden(){
         ArrayList<Productos> list = new ArrayList<>();
-        Cursor cursor = getRedeadableConnection().rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + STATUS_ROW + "=" + 0, null);
+        Cursor cursor = getReadableConnection().rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE " + STATUS_ROW + " = " + 0, null);
 
         if(cursor.moveToFirst()){
-            Productos p = new Productos();
+
             do{
+                Productos p = new Productos();
                 p.setId(cursor.getInt(0));
                 p.setStock(cursor.getInt(1));
                 p.setName(cursor.getString(2));
@@ -151,21 +153,21 @@ public class utilities {
         return list;
     }
 
-    public static boolean definityDeal(int id){
+    public static boolean definitiveDel(int id){
         return(getWritableConnection().delete(TABLE_NAME, ID_ROW +
-                "=" + id, null) > 0) ? true : false;
+                " = " + id, null) > 0) ? true : false;
     }
 
     public static boolean logicDel(int id){
-        Productos p = searchProducto(id);
+        Productos p = searchProduct(id);
         p.setStatus(false);
-        return updateProductos(p);
+        return updateProduct(p);
     }
 
     public static boolean reactiveProducto(int id){
-        Productos p = searchProducto(id);
+        Productos p = searchProduct(id);
         p.setStatus(true);
-        return updateProductos(p);
+        return updateProduct(p);
     }
 
 }

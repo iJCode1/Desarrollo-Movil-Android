@@ -191,14 +191,14 @@ public class AltasFragment extends Fragment implements View.OnClickListener,Date
                     Toast.makeText(getContext(), "Completa los campos por favor", Toast.LENGTH_LONG).show();
                     Toast.makeText(getContext(), etNombre.getText().toString(), Toast.LENGTH_LONG).show();
                 }else{
-                    Toast.makeText(getContext(),
+                    /*Toast.makeText(getContext(),
                             "Nombre: "+etNombre.getText().toString() +
                                     "Caducidad: "+etCaducidad.getText().toString() +
                                     "URL Imagen: "+currentPath +
                                     "Categoria: "+spCategoria.getSelectedItem().toString() +
                                     "Status: "+getStatus(spStatus.getSelectedItem().toString()) +
                                     "Stock: "+etStock.getText().toString(),
-                            Toast.LENGTH_LONG).show();
+                            Toast.LENGTH_LONG).show();*/
                     try {
                         Productos p = new Productos(
                                 Integer.parseInt(etStock.getText().toString()),
