@@ -18,7 +18,7 @@ public class Base extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL(utilities.DROP_TABLE_PRODUCTS);
+        db.execSQL(utilities.DROP_PRODUCTS_TABLE);
         onCreate(db);
     }
 }

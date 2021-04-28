@@ -1,34 +1,34 @@
 package com.example.articulos.BD;
 
-public class Productos {
+public class Products {
 
     private int id;
     private int stock;
     private String name;
     private String pic;
-    private String DataDue;
+    private String DateDue;
     private String category;
     private boolean status;
 
-    public Productos(){
+    public Products(){
 
     }
 
-    public Productos(int id, int stock, String name, String pic, String DataDue, String category, boolean status){
+    public Products(int id, int stock, String name, String pic, String DateDue, String category, boolean status){
         this.id = id;
         this.stock = stock;
         this.name = name;
         this.pic = pic;
-        this.DataDue = DataDue;
+        this.DateDue = DateDue;
         this.category = category;
         this.status = status;
     }
 
-    public Productos(int stock, String name, String pic, String DataDue, String category, boolean status){
+    public Products(int stock, String name, String pic, String DateDue, String category, boolean status){
         this.stock = stock;
         this.name = name;
         this.pic = pic;
-        this.DataDue = DataDue;
+        this.DateDue = DateDue;
         this.category = category;
         this.status = status;
     }
@@ -65,12 +65,12 @@ public class Productos {
         this.pic = pic;
     }
 
-    public String getDataDue() {
-        return DataDue;
+    public String getDateDue() {
+        return DateDue;
     }
 
-    public void setDataDue(String dataDue) {
-        DataDue = dataDue;
+    public void setDateDue(String dateDue) {
+        DateDue = dateDue;
     }
 
     public String getCategory() {
