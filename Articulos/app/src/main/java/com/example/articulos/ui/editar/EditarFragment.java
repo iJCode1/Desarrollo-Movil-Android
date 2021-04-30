@@ -85,7 +85,7 @@ public class EditarFragment extends Fragment implements View.OnClickListener,Dat
         spStatus = root.findViewById(R.id.fe_status);
         ivPicture = root.findViewById(R.id.fe_imagen);
         btnCancelar = root.findViewById(R.id.fe_btnCancel);
-        btnActualizar = root.findViewById(R.id.fe_btnUpdate);
+        btnActualizar = root.findViewById(R.id.fb_btnUpdate);
         btnCalendario = root.findViewById(R.id.fe_calendario);
 
         catAdapter = ArrayAdapter.createFromResource(getContext(), R.array.category, android.R.layout.simple_spinner_item);
@@ -222,7 +222,7 @@ public class EditarFragment extends Fragment implements View.OnClickListener,Dat
             case R.id.fe_calendario:
                 showDatePicker();
                 break;
-            case R.id.fe_btnUpdate:break;
+            case R.id.fb_btnUpdate:break;
             case R.id.fe_btnCancel:break;
             case R.id.fe_imagen:break;
         }
