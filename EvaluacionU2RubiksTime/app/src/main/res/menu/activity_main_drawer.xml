@@ -6,35 +6,35 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:icon="@drawable/ihome"
+            android:title="@string/fragment_home" />
         <item
             android:id="@+id/nav_altas"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/ialtas"
             android:title="@string/fragment_altas" />
         <item
             android:id="@+id/nav_buscar"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/ibuscar"
             android:title="@string/fragment_buscar" />
         <item
             android:id="@+id/nav_modificar"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/imodificar"
             android:title="@string/fragment_modificar" />
         <item
             android:id="@+id/nav_eliminar"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/idelete"
             android:title="@string/fragment_eliminar" />
         <item
             android:id="@+id/nav_activos"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/iactivos"
             android:title="@string/fragment_activos" />
         <item
             android:id="@+id/nav_inactivos"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/inactive"
             android:title="@string/fragment_inactivos" />
         <item
             android:id="@+id/nav_creditos"
-            android:icon="@drawable/ic_menu_slideshow"
+            android:icon="@drawable/icreditos"
             android:title="@string/fragment_creditos" />
     </group>
 </menu>
