@@ -1,16 +1,16 @@
-package com.example.evaluacionu2_rubikstime.ui.gallery;
+package com.example.evaluacionu2_rubikstime.ui.modificar;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class GalleryViewModel extends ViewModel {
+public class ModificarViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public GalleryViewModel() {
+    public ModificarViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is gallery fragment");
+        mText.setValue("This is modificar fragment");
     }
 
     public LiveData<String> getText() {

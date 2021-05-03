@@ -1,16 +1,16 @@
-package com.example.evaluacionu2_rubikstime.ui.slideshow;
+package com.example.evaluacionu2_rubikstime.ui.buscar;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class SlideshowViewModel extends ViewModel {
+public class BuscarViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public SlideshowViewModel() {
+    public BuscarViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is slideshow fragment");
+        mText.setValue("This is buscar fragment");
     }
 
     public LiveData<String> getText() {

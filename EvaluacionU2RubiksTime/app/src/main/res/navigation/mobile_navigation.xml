@@ -8,20 +8,44 @@
     <fragment
         android:id="@+id/nav_home"
         android:name="com.example.evaluacionu2_rubikstime.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:label="@string/fragment_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.example.evaluacionu2_rubikstime.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_altas"
+        android:name="com.example.evaluacionu2_rubikstime.ui.altas.AltasFragment"
+        android:label="@string/fragment_altas"
+        tools:layout="@layout/fragment_altas" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.evaluacionu2_rubikstime.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_buscar"
+        android:name="com.example.evaluacionu2_rubikstime.ui.buscar.BuscarFragment"
+        android:label="@string/fragment_buscar"
+        tools:layout="@layout/fragment_buscar" />
+
+    <fragment
+        android:id="@+id/nav_modificar"
+        android:name="com.example.evaluacionu2_rubikstime.ui.modificar.ModificarFragment"
+        android:label="@string/fragment_modificar"
+        tools:layout="@layout/fragment_modificar" />
+
+    <fragment
+        android:id="@+id/nav_eliminar"
+        android:name="com.example.evaluacionu2_rubikstime.ui.eliminar.EliminarFragment"
+        android:label="@string/fragment_eliminar"
+        tools:layout="@layout/fragment_eliminar" />
+
+    <fragment
+        android:id="@+id/nav_activos"
+        android:name="com.example.evaluacionu2_rubikstime.ui.activos.ActivosFragment"
+        android:label="@string/fragment_activos"
+        tools:layout="@layout/fragment_activos" />
+
+    <fragment
+        android:id="@+id/nav_inactivos"
+        android:name="com.example.evaluacionu2_rubikstime.ui.inactivos.InactivosFragment"
+        android:label="@string/fragment_inactivos"
+        tools:layout="@layout/fragment_inactivos" />
 
     <fragment
         android:id="@+id/nav_creditos"
