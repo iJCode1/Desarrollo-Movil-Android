@@ -47,13 +47,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:hint="@string/cube_category"
+                android:hint="@string/cube_name"
                 android:textColorHint="@color/white"
                 app:boxStrokeColor="@color/cVerde"
                 app:hintTextColor="@color/cCarne">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/fa_nombre_categoria"
+                    android:id="@+id/fa_nombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
@@ -66,13 +66,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:hint="@string/cube_name"
+                android:hint="@string/cube_description"
                 android:textColorHint="@color/white"
                 app:boxStrokeColor="@color/cVerde"
                 app:hintTextColor="@color/cCarne">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/fa_nombre_cubo"
+                    android:id="@+id/fa_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"

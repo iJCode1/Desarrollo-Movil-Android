@@ -20,7 +20,7 @@
 
     <!-- Altas -->
     <string name="cube_id">ID del Tiempo</string>
-    <string name="cube_category">Nombre de Categoría</string>
+    <string name="cube_description">Descripción del Solve</string>
     <string name="cube_name">Nombre del Cubo</string>
     <string name="cube_DateDue">Fecha Actual</string>
     <string name="cube_time">Tiempo</string>
