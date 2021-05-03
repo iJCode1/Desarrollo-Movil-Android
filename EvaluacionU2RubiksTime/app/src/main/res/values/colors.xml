@@ -7,4 +7,14 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Personalizados -->
+    <color name="cNaranja">#fca311</color>
+    <color name="cHint">#f1faee</color>
+    <color name="cRojo">#e63946</color>
+    <color name="cVerde">#70e000</color>
+    <color name="cAzul">#caf0f8</color>
+    <color name="cCarne">#fff3b0</color>
+    <color name="cLila">#b8b5ff</color>
+    <color name="cHint2">#fb743e</color>
 </resources>

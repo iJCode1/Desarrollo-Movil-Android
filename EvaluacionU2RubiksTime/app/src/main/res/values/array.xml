@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="o0">
+        <item>No opción seleccionada</item>
+    </string-array>
+
+    <string-array name="cubes_category">
+        <item>2x2</item>
+        <item>3x3x3</item>
+        <item>3×3×3 - Blindfolded</item>
+        <item>3×3×3 - One-handed</item>
+        <item>3×3×3 - With feet</item>
+        <item>4x4</item>
+        <item>5x5</item>
+        <item>6x6</item>
+        <item>Clock</item>
+        <item>Mirror</item>
+        <item>Pyraminx</item>
+        <item>Megaminx</item>
+        <item>Skewb</item>
+    </string-array>
+
+    <string-array name="status">
+        <item>Activo</item>
+        <item>Inactivo</item>
+    </string-array>
+</resources>

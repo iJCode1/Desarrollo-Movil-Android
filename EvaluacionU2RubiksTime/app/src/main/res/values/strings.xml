@@ -18,8 +18,22 @@
     <string name="fragment_inactivos">Inactivos</string>
     <string name="fragment_creditos">Creditos</string>
 
+    <!-- Altas -->
+    <string name="cube_id">ID del Tiempo</string>
+    <string name="cube_category">Nombre de Categoría</string>
+    <string name="cube_name">Nombre del Cubo</string>
+    <string name="cube_DateDue">Fecha Actual</string>
+    <string name="cube_time">Tiempo</string>
+    <string name="cube_search_id">ID a Buscar</string>
+
+    <!-- Buttons -->
+    <string name="sClear">Limpiar</string>
+    <string name="sAdd">Agregar</string>
+    <string name="sModify">Actualizar</string>
+    <string name="sCancel">Cancelar</string>
+
     <!-- Creditos -->
-    <string name="imagen">Imagen</string>
+    <string name="img">Imagen</string>
     <string name="txtTecnologico">Instituto Tecnologico de Toluca</string>
     <string name="version">Version 1.0</string>
     <string name="materia">Dispositivos Moviles</string>

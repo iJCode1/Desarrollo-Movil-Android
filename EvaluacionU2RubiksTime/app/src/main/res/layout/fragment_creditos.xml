@@ -21,7 +21,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="30dp"
-            android:contentDescription="@string/imagen"
+            android:contentDescription="@string/img"
             android:src="@drawable/logo" />
 
         <TextView
