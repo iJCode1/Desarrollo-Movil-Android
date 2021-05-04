@@ -19,7 +19,7 @@
     <string name="fragment_creditos">Creditos</string>
 
     <!-- Altas -->
-    <string name="cube_id">ID del Tiempo</string>
+    <string name="cube_id">ID del Tiempo Registrado</string>
     <string name="cube_description">Descripción del Solve</string>
     <string name="cube_name">Nombre del Cubo</string>
     <string name="cube_DateDue">Fecha Actual</string>

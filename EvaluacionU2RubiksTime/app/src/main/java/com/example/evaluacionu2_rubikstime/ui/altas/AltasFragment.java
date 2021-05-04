@@ -189,6 +189,15 @@ public class AltasFragment extends Fragment implements View.OnClickListener, Dat
                                     "Status: " + getStatus(sStatus.getSelectedItem().toString()) + "\n"+
                                     "Tiempo: "+ etTime.getText().toString() + "\n",
                             Toast.LENGTH_SHORT).show();
+                    Bundle datos = new Bundle();
+                    datos.putString("name", etNombre.getText().toString().trim());
+                    datos.putString("descripcion", etDescription.getText().toString().trim());
+                    datos.putString("fecha", etFecha.getText().toString().trim());
+                    datos.putString("categoria", sCategoria.getSelectedItem().toString().trim());
+                    datos.putString("status", sStatus.getSelectedItem().toString().trim());
+                    datos.putString("tiempo", etTime.getText().toString().trim());
+                    datos.putSerializable("imagen", picture);
+                    getParentFragmentManager().setFragmentResult("key", datos);
 
                    /* try{
                         Products p = new Products(
