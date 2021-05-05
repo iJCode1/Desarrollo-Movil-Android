@@ -33,6 +33,7 @@
     <string name="sCancel">Cancelar</string>
     <string name="sEdit">Editar</string>
     <string name="sDelete">Eliminar</string>
+    <string name="sActivar">Activar</string>
 
     <!-- Creditos -->
     <string name="img">Imagen</string>

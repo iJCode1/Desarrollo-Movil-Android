@@ -107,13 +107,23 @@ public class ActivosFragment extends Fragment implements View.OnClickListener, D
     }
 
 
+    private void clearFields(){
+        etId.setText("");
+        etNombre.setText("");
+        etDescription.setText("");
+        etFecha.setText("");
+        etTime.setText("");
+        ivpic.setImageResource(R.drawable.icamera);
+        currentPath = "";
+    }
+
     private void leerDatos(){
         getParentFragmentManager().setFragmentResultListener("keyModificada", this, new FragmentResultListener() {
             @Override
             public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
-                String modificado = result.getString("modificado");
+                String statusA = result.getString("status");
 
-                if(modificado.equals("si")) {
+                if(statusA.equals("Activo")) {
                     String id = result.getString("id");
                     String name = result.getString("name");
                     String descripcion = result.getString("descripcion");
@@ -137,7 +147,56 @@ public class ActivosFragment extends Fragment implements View.OnClickListener, D
                     ivpic.setImageURI(FileProvider.getUriForFile(getContext(), "com.example.evaluacionu2_rubikstime", (File) imagen));
                     etTime.setText(tiempo);
                     currentPath = path;
-                    
+
+                    for(int i = 0; i<sCategoria.getCount(); i++){
+                        if(sCategoria.getItemAtPosition(i).toString().equalsIgnoreCase(categoria)){
+                            sCategoria.setSelection(i);
+                        }
+                    }
+
+                    for(int i = 0; i<sStatus.getCount(); i++){
+                        if(sStatus.getItemAtPosition(i).toString().equalsIgnoreCase(status)){
+                            sStatus.setSelection(i);
+                        }
+                    }
+
+                }
+
+            }
+        });
+
+        //----------------------- Datos Obtenidos de  Activado (Fragment Inactivos) -----------------------
+
+        getParentFragmentManager().setFragmentResultListener("keyActivada", this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+                String activado = result.getString("activado");
+
+                if(activado.equals("si")) {
+                    String id = result.getString("id");
+                    String name = result.getString("name");
+                    String descripcion = result.getString("descripcion");
+                    String fecha = result.getString("fecha");
+                    String categoria = result.getString("categoria");
+                    String status = result.getString("status");
+                    String tiempo = result.getString("tiempo");
+                    String path = result.getString("path");
+                    Serializable imagen = result.getSerializable("imagen");
+
+                    ArrayList<String> aCategoria = new ArrayList<String>();
+                    aCategoria.add(categoria);
+
+                    ArrayList<String> aStatus = new ArrayList<String>();
+                    aStatus.add(status);
+
+                    etId.setText(id);
+                    etNombre.setText(name);
+                    etDescription.setText(descripcion);
+                    etFecha.setText(fecha);
+                    ivpic.setImageURI(FileProvider.getUriForFile(getContext(), "com.example.evaluacionu2_rubikstime", (File) imagen));
+                    etTime.setText(tiempo);
+                    currentPath = path;
+
                     for(int i = 0; i<sCategoria.getCount(); i++){
                         if(sCategoria.getItemAtPosition(i).toString().equalsIgnoreCase(categoria)){
                             sCategoria.setSelection(i);
@@ -268,6 +327,7 @@ public class ActivosFragment extends Fragment implements View.OnClickListener, D
                     Toast.makeText(getContext(),"Complete campos", Toast.LENGTH_LONG).show();
                     //Toast.makeText(getContext(), etNombre.getText().toString(), Toast.LENGTH_LONG).show();
                 }else{
+                    /*
                     Toast.makeText(getContext(),
                             "ID del Tiempo: "+etId.getText().toString()+"\n"+
                                     "Nombre del Cubo: "+ etNombre.getText().toString() + "\n"+
@@ -277,7 +337,8 @@ public class ActivosFragment extends Fragment implements View.OnClickListener, D
                                     "Categoria: "+ sCategoria.getSelectedItem().toString() + "\n"+
                                     "Status: " + getStatus(sStatus.getSelectedItem().toString()) + "\n"+
                                     "Tiempo: "+ etTime.getText().toString() + "\n",
-                            Toast.LENGTH_SHORT).show();
+                            Toast.LENGTH_SHORT).show();*/
+                    Toast.makeText(getContext(), "Editado!", Toast.LENGTH_SHORT).show();
                     Bundle editadoActivo = new Bundle();
                     editadoActivo.putString("editado", "si");
                     editadoActivo.putString("id", etId.getText().toString().trim());

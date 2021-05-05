@@ -102,6 +102,7 @@ public class AltasFragment extends Fragment implements View.OnClickListener, Dat
     }
 
 
+
     private void leerDatos(){
         getParentFragmentManager().setFragmentResultListener("keyModificada", this, new FragmentResultListener() {
             @Override
@@ -248,7 +249,7 @@ public class AltasFragment extends Fragment implements View.OnClickListener, Dat
                     Toast.makeText(getContext(),"Complete campos", Toast.LENGTH_LONG).show();
                     //Toast.makeText(getContext(), etNombre.getText().toString(), Toast.LENGTH_LONG).show();
                 }else{
-                    Toast.makeText(getContext(),
+                    /*Toast.makeText(getContext(),
                             "ID del Tiempo: "+etId.getText().toString()+"\n"+
                                     "Nombre del Cubo: "+ etNombre.getText().toString() + "\n"+
                                     "Descripción del Solve: "+ etDescription.getText().toString() + "\n"+
@@ -257,7 +258,9 @@ public class AltasFragment extends Fragment implements View.OnClickListener, Dat
                                     "Categoria: "+ sCategoria.getSelectedItem().toString() + "\n"+
                                     "Status: " + getStatus(sStatus.getSelectedItem().toString()) + "\n"+
                                     "Tiempo: "+ etTime.getText().toString() + "\n",
-                            Toast.LENGTH_SHORT).show();
+                            Toast.LENGTH_SHORT).show();*/
+                    Toast.makeText(getContext(), "Agregado!", Toast.LENGTH_SHORT).show();
+                    //Toast.makeText(getContext(), "Picture!"+picture, Toast.LENGTH_SHORT).show();
                     Bundle datos = new Bundle();
                     datos.putString("id", etId.getText().toString().trim());
                     datos.putString("name", etNombre.getText().toString().trim());
@@ -269,6 +272,7 @@ public class AltasFragment extends Fragment implements View.OnClickListener, Dat
                     datos.putSerializable("imagen", picture);
                     datos.putString("path", currentPath);
                     getParentFragmentManager().setFragmentResult("key", datos);
+                    clearFields();
 
                    /* try{
                         Products p = new Products(
