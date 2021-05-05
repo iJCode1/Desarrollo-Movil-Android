@@ -43,6 +43,27 @@
                 android:contentDescription="@string/img"
                 android:src="@drawable/ifhome" />
 
+            <!-- ID -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:hint="@string/cube_id"
+                android:textColorHint="@color/white"
+                app:boxStrokeColor="@color/cVerde"
+                app:hintTextColor="@color/cCarne">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/fa_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Nombre del Cubo -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -62,6 +83,7 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
+            <!-- Descripción del Solve -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -88,6 +110,7 @@
                 android:orientation="horizontal"
                 android:layout_margin="15dp">
 
+                <!-- Fecha Actual -->
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
@@ -133,6 +156,7 @@
                 android:background="@android:color/transparent"
                 android:backgroundTint="@color/white" />
 
+            <!-- Tiempo -->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

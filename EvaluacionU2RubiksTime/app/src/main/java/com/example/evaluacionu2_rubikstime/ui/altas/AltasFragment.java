@@ -37,7 +37,7 @@ import static android.app.Activity.RESULT_OK;
 
 public class AltasFragment extends Fragment implements View.OnClickListener, DatePickerDialog.OnDateSetListener {
 
-    private EditText etNombre, etDescription, etFecha, etTime;
+    private EditText etId, etNombre, etDescription, etFecha, etTime;
     private Spinner sCategoria, sStatus;
     private ImageView ivpic;
     private Button btnAgregar, btnLimpiar;
@@ -73,6 +73,7 @@ public class AltasFragment extends Fragment implements View.OnClickListener, Dat
     }
 
     private void initComponents() {
+        etId = root.findViewById(R.id.fa_id);
         etNombre = root.findViewById(R.id.fa_nombre);
         etDescription = root.findViewById(R.id.fa_description);
         etFecha = root.findViewById(R.id.fa_fecha);
@@ -97,6 +98,7 @@ public class AltasFragment extends Fragment implements View.OnClickListener, Dat
     }
 
     private void clearFields(){
+        etId.setText("");
         etNombre.setText("");
         etDescription.setText("");
         etFecha.setText("");
@@ -153,7 +155,8 @@ public class AltasFragment extends Fragment implements View.OnClickListener, Dat
     }
 
     private boolean validateFields(){
-        if (etNombre.getText().toString().equals("") ||
+        if (etId.getText().toString().equals("")||
+                etNombre.getText().toString().equals("") ||
                 etDescription.getText().toString().equals("") ||
                 etFecha.getText().toString().equals("") ||
                 etTime.getText().toString().equals("") ||
@@ -178,10 +181,11 @@ public class AltasFragment extends Fragment implements View.OnClickListener, Dat
             case R.id.fa_btnAdd:
                 if (!validateFields()){
                     Toast.makeText(getContext(),"Complete campos", Toast.LENGTH_LONG).show();
-                    Toast.makeText(getContext(), etNombre.getText().toString(), Toast.LENGTH_LONG).show();
+                    //Toast.makeText(getContext(), etNombre.getText().toString(), Toast.LENGTH_LONG).show();
                 }else{
                     Toast.makeText(getContext(),
-                            "Nombre del Cubo: "+ etNombre.getText().toString() + "\n"+
+                            "ID del Tiempo: "+etId.getText().toString()+"\n"+
+                                    "Nombre del Cubo: "+ etNombre.getText().toString() + "\n"+
                                     "Descripción del Solve: "+ etDescription.getText().toString() + "\n"+
                                     "Fecha: "+ etFecha.getText().toString() + "\n"+
                                     "URL Image: "+ currentPath + "\n"+
@@ -190,6 +194,7 @@ public class AltasFragment extends Fragment implements View.OnClickListener, Dat
                                     "Tiempo: "+ etTime.getText().toString() + "\n",
                             Toast.LENGTH_SHORT).show();
                     Bundle datos = new Bundle();
+                    datos.putString("id", etId.getText().toString().trim());
                     datos.putString("name", etNombre.getText().toString().trim());
                     datos.putString("descripcion", etDescription.getText().toString().trim());
                     datos.putString("fecha", etFecha.getText().toString().trim());
