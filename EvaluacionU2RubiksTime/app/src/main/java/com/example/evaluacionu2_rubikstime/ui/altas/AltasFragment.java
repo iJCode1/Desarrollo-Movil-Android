@@ -1,6 +1,7 @@
 package com.example.evaluacionu2_rubikstime.ui.altas;
 
 import androidx.core.content.FileProvider;
+import androidx.fragment.app.FragmentResultListener;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.app.DatePickerDialog;
@@ -29,7 +30,9 @@ import com.example.evaluacionu2_rubikstime.R;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -69,6 +72,7 @@ public class AltasFragment extends Fragment implements View.OnClickListener, Dat
                              @Nullable Bundle savedInstanceState) {
         root = inflater.inflate(R.layout.fragment_altas, container, false);
         initComponents();
+        leerDatos();
         return root;
     }
 
@@ -95,6 +99,56 @@ public class AltasFragment extends Fragment implements View.OnClickListener, Dat
         btnAgregar.setOnClickListener((View.OnClickListener) this);
         ivpic.setOnClickListener((View.OnClickListener) this);
         ibtnCalendario.setOnClickListener((View.OnClickListener) this);
+    }
+
+
+    private void leerDatos(){
+        getParentFragmentManager().setFragmentResultListener("keyModificada", this, new FragmentResultListener() {
+            @Override
+            public void onFragmentResult(@NonNull String requestKey, @NonNull Bundle result) {
+                String modificado = result.getString("modificado");
+
+                if(modificado.equals("si")) {
+                    String id = result.getString("id");
+                    String name = result.getString("name");
+                    String descripcion = result.getString("descripcion");
+                    String fecha = result.getString("fecha");
+                    String categoria = result.getString("categoria");
+                    String status = result.getString("status");
+                    String tiempo = result.getString("tiempo");
+                    String path = result.getString("path");
+                    Serializable imagen = result.getSerializable("imagen");
+
+                    ArrayList<String> aCategoria = new ArrayList<String>();
+                    aCategoria.add(categoria);
+
+                    ArrayList<String> aStatus = new ArrayList<String>();
+                    aStatus.add(status);
+
+
+                    etId.setText(id);
+                    etNombre.setText(name);
+                    etDescription.setText(descripcion);
+                    etFecha.setText(fecha);
+                    ivpic.setImageURI(FileProvider.getUriForFile(getContext(), "com.example.evaluacionu2_rubikstime", (File) imagen));
+                    etTime.setText(tiempo);
+                    currentPath = path;
+
+
+                    //sCategoria.setOnItemClickListener(this());
+
+
+                    ArrayAdapter<String> spCategoria = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, aCategoria);
+                    spCategoria.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    sCategoria.setAdapter(spCategoria);
+
+                    ArrayAdapter<String> spStatus = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, aStatus);
+                    spStatus.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    sStatus.setAdapter(spStatus);
+                }
+
+            }
+        });
     }
 
     private void clearFields(){
@@ -202,6 +256,7 @@ public class AltasFragment extends Fragment implements View.OnClickListener, Dat
                     datos.putString("status", sStatus.getSelectedItem().toString().trim());
                     datos.putString("tiempo", etTime.getText().toString().trim());
                     datos.putSerializable("imagen", picture);
+                    datos.putString("path", currentPath);
                     getParentFragmentManager().setFragmentResult("key", datos);
 
                    /* try{

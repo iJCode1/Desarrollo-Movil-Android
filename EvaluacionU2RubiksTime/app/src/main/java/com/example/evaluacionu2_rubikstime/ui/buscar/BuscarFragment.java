@@ -82,6 +82,7 @@ public class BuscarFragment extends Fragment implements View.OnClickListener, Da
 
     private void initComponents() {
         etId = root.findViewById(R.id.fb_idTiempo);
+        etId.setEnabled(false);
         etNombre = root.findViewById(R.id.fb_nombre);
         etDescription = root.findViewById(R.id.fb_description);
         etFecha = root.findViewById(R.id.fb_fecha);
@@ -112,6 +113,7 @@ public class BuscarFragment extends Fragment implements View.OnClickListener, Da
                 String categoria = result.getString("categoria");
                 String status = result.getString("status");
                 String tiempo = result.getString("tiempo");
+                String path = result.getString("path");
                 Serializable imagen = result.getSerializable("imagen");
 
                 ArrayList<String> aCategoria = new ArrayList<String>();
@@ -128,6 +130,7 @@ public class BuscarFragment extends Fragment implements View.OnClickListener, Da
                 etFecha.setText(fecha);
                 ivpic.setImageURI(FileProvider.getUriForFile(getContext(),"com.example.evaluacionu2_rubikstime", (File) imagen));
                 etTime.setText(tiempo);
+                currentPath = path;
 
 
                 //sCategoria.setOnItemClickListener(this());
@@ -236,8 +239,7 @@ public class BuscarFragment extends Fragment implements View.OnClickListener, Da
                 etNombre.getText().toString().equals("") ||
                 etDescription.getText().toString().equals("") ||
                 etFecha.getText().toString().equals("") ||
-                etTime.getText().toString().equals("") ||
-                currentPath.equals("")){
+                etTime.getText().toString().equals("")){
             return false;
         }
         return true;
@@ -265,21 +267,24 @@ public class BuscarFragment extends Fragment implements View.OnClickListener, Da
                                     "Nombre del Cubo: "+ etNombre.getText().toString() + "\n"+
                                     "Descripción del Solve: "+ etDescription.getText().toString() + "\n"+
                                     "Fecha: "+ etFecha.getText().toString() + "\n"+
-                                    "URL Image: "+ currentPath + "\n"+
                                     "Categoria: "+ sCategoria.getSelectedItem().toString() + "\n"+
                                     "Status: " + getStatus(sStatus.getSelectedItem().toString()) + "\n"+
-                                    "Tiempo: "+ etTime.getText().toString() + "\n",
+                                    "Tiempo: "+ etTime.getText().toString() + "\n"+
+                                    "Path: "+ currentPath,
                             Toast.LENGTH_SHORT).show();
-                    Bundle datos = new Bundle();
-                    datos.putString("id", etId.getText().toString().trim());
-                    datos.putString("name", etNombre.getText().toString().trim());
-                    datos.putString("descripcion", etDescription.getText().toString().trim());
-                    datos.putString("fecha", etFecha.getText().toString().trim());
-                    datos.putString("categoria", sCategoria.getSelectedItem().toString().trim());
-                    datos.putString("status", sStatus.getSelectedItem().toString().trim());
-                    datos.putString("tiempo", etTime.getText().toString().trim());
-                    datos.putSerializable("imagen", picture);
-                    getParentFragmentManager().setFragmentResult("key", datos);
+
+                    Bundle datosModificados = new Bundle();
+                    datosModificados.putString("modificado", "si");
+                    datosModificados.putString("id", etId.getText().toString().trim());
+                    datosModificados.putString("name", etNombre.getText().toString().trim());
+                    datosModificados.putString("descripcion", etDescription.getText().toString().trim());
+                    datosModificados.putString("fecha", etFecha.getText().toString().trim());
+                    datosModificados.putString("categoria", sCategoria.getSelectedItem().toString().trim());
+                    datosModificados.putString("status", sStatus.getSelectedItem().toString().trim());
+                    datosModificados.putString("tiempo", etTime.getText().toString().trim());
+                    datosModificados.putSerializable("imagen", picture);
+                    datosModificados.putString("path", currentPath);
+                    getParentFragmentManager().setFragmentResult("keyModificada", datosModificados);
 
                    /* try{
                         Products p = new Products(
