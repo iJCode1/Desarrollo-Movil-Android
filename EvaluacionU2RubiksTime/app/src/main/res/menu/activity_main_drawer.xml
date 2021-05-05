@@ -16,6 +16,7 @@
             android:id="@+id/nav_buscar"
             android:icon="@drawable/ibuscar"
             android:title="@string/fragment_buscar" />
+        <!--
         <item
             android:id="@+id/nav_modificar"
             android:icon="@drawable/imodificar"
@@ -24,6 +25,7 @@
             android:id="@+id/nav_eliminar"
             android:icon="@drawable/idelete"
             android:title="@string/fragment_eliminar" />
+        -->
         <item
             android:id="@+id/nav_activos"
             android:icon="@drawable/iactivos"

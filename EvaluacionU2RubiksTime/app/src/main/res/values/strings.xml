@@ -29,8 +29,9 @@
     <!-- Buttons -->
     <string name="sClear">Limpiar</string>
     <string name="sAdd">Agregar</string>
-    <string name="sModify">Actualizar</string>
+    <string name="sModify">Modificar</string>
     <string name="sCancel">Cancelar</string>
+    <string name="sDelete">Eliminar</string>
 
     <!-- Creditos -->
     <string name="img">Imagen</string>

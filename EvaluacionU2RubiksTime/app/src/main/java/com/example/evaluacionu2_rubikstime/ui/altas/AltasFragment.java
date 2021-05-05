@@ -111,7 +111,7 @@ public class AltasFragment extends Fragment implements View.OnClickListener, Dat
         calendar = Calendar.getInstance();
         year = calendar.get(Calendar.YEAR);
         month = calendar.get(Calendar.MONTH);
-        day = calendar.get(Calendar.DAY_OF_YEAR);
+        day = calendar.get(Calendar.DAY_OF_MONTH);
 
         dpd = new DatePickerDialog(getContext(),this,year,month,day);
         dpd.show();
