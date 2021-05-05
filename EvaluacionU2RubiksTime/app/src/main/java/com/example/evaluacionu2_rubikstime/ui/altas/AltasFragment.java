@@ -137,14 +137,25 @@ public class AltasFragment extends Fragment implements View.OnClickListener, Dat
 
                     //sCategoria.setOnItemClickListener(this());
 
+                    for(int i = 0; i<sCategoria.getCount(); i++){
+                        if(sCategoria.getItemAtPosition(i).toString().equalsIgnoreCase(categoria)){
+                            sCategoria.setSelection(i);
+                        }
+                    }
 
-                    ArrayAdapter<String> spCategoria = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, aCategoria);
+                    for(int i = 0; i<sStatus.getCount(); i++){
+                        if(sStatus.getItemAtPosition(i).toString().equalsIgnoreCase(status)){
+                            sStatus.setSelection(i);
+                        }
+                    }
+
+                    /*ArrayAdapter<String> spCategoria = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, aCategoria);
                     spCategoria.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     sCategoria.setAdapter(spCategoria);
 
                     ArrayAdapter<String> spStatus = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, aStatus);
                     spStatus.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                    sStatus.setAdapter(spStatus);
+                    sStatus.setAdapter(spStatus);*/
                 }
 
             }

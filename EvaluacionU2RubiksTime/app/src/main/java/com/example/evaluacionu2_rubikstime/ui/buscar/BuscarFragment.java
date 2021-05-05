@@ -58,7 +58,7 @@ public class BuscarFragment extends Fragment implements View.OnClickListener, Da
     private DatePickerDialog dpd;
     private Calendar calendar;
 
-    private ArrayAdapter<String> CatAdapter, StatusAdapter;
+    private ArrayAdapter<CharSequence> CatAdapter, StatusAdapter;
 
     private Intent camera;
     private File picture, storageDir;
@@ -94,7 +94,11 @@ public class BuscarFragment extends Fragment implements View.OnClickListener, Da
         sCategoria = root.findViewById(R.id.fb_cubos_categoria);
         sStatus = root.findViewById(R.id.fb_status);
 
+        CatAdapter = ArrayAdapter.createFromResource(getContext(),R.array.cubes_category,android.R.layout.simple_spinner_item);
+        StatusAdapter = ArrayAdapter.createFromResource(getContext(),R.array.status,android.R.layout.simple_spinner_item);
 
+        sCategoria.setAdapter(CatAdapter);
+        sStatus.setAdapter(StatusAdapter);
 
         btnModificar.setOnClickListener((View.OnClickListener) this);
         btnEliminar.setOnClickListener((View.OnClickListener) this);
@@ -136,13 +140,20 @@ public class BuscarFragment extends Fragment implements View.OnClickListener, Da
                 //sCategoria.setOnItemClickListener(this());
 
 
-                ArrayAdapter<String> spCategoria = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, aCategoria);
+                for(int i = 0; i<sCategoria.getCount(); i++){
+                    if(sCategoria.getItemAtPosition(i).toString().equalsIgnoreCase(categoria)){
+                        sCategoria.setSelection(i);
+                    }
+                }
+
+                /*ArrayAdapter<String> spCategoria = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, aCategoria);
                 spCategoria.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                sCategoria.setAdapter(spCategoria);
+                sCategoria.setAdapter(spCategoria);*/
 
                 ArrayAdapter<String> spStatus = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, aStatus);
                 spStatus.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 sStatus.setAdapter(spStatus);
+
 
             }
         });
@@ -151,7 +162,17 @@ public class BuscarFragment extends Fragment implements View.OnClickListener, Da
     private void deleteFields(){
         AlertDialog dialogo = new AlertDialog
                 .Builder(getActivity())
-                .setPositiveButton("Eliminar", new DialogInterface.OnClickListener() {
+                .setNeutralButton("Baja Lógica (Status)", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ArrayList<String> status2 = new ArrayList<String>();
+                        status2.add("inactivo");
+                        ArrayAdapter<String> sp2 = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, status2);
+                        sp2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        sStatus.setAdapter(sp2);
+                    }
+                })
+                .setPositiveButton("Baja Fisica (Definitiva)", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         etId.setText("");
