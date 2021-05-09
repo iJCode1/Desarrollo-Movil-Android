@@ -14,7 +14,12 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.firebase.model.Cubo;
+import com.firebase.ui.auth.AuthUI;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -22,6 +27,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 
@@ -38,10 +44,40 @@ public class MainActivity extends AppCompatActivity {
 
     Cubo cuboSelected;
 
+    FirebaseAuth mfirebaseAuth;
+    FirebaseAuth.AuthStateListener mAuthListener;
+
+    public static final int REQUEST_CODE = 1;
+
+    List<AuthUI.IdpConfig> provider = Arrays.asList(
+            new AuthUI.IdpConfig.FacebookBuilder().build(),
+            new AuthUI.IdpConfig.EmailBuilder().build(),
+            new AuthUI.IdpConfig.GoogleBuilder().build()
+    );
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mfirebaseAuth = FirebaseAuth.getInstance();
+        mAuthListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                FirebaseUser user = firebaseAuth.getCurrentUser();
+
+                if(user != null){
+                    Toast.makeText(MainActivity.this, "Iniciaste sesión Satisfactoriamente", Toast.LENGTH_SHORT).show();
+                }else{
+                    Toast.makeText(MainActivity.this, "False", Toast.LENGTH_SHORT).show();
+                    startActivityForResult(AuthUI.getInstance()
+                            .createSignInIntentBuilder()
+                            .setAvailableProviders(provider)
+                            .setIsSmartLockEnabled(false)
+                            .build(), REQUEST_CODE);
+                }
+            }
+        };
 
 
         etNombre = (EditText) findViewById(R.id.txtNombre);
@@ -169,5 +205,27 @@ public class MainActivity extends AppCompatActivity {
         }else if(precio.equals("")){
             etPrecio.setError("Required");
         }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mfirebaseAuth.addAuthStateListener(mAuthListener);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        mfirebaseAuth.removeAuthStateListener(mAuthListener);
+    }
+
+    public void cerrarSesion(View view){
+        AuthUI.getInstance().signOut(this).addOnCompleteListener(new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                Toast.makeText(MainActivity.this, "Sesión Cerrada!", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+        });
     }
 }

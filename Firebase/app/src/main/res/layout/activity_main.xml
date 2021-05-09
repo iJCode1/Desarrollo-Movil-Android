@@ -90,8 +90,16 @@
             <ListView
                 android:id="@+id/lv_cubos"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"/>
+                android:layout_height="200dp"/>
 
+            <Button
+                android:id="@+id/btnSalir"
+                android:onClick="cerrarSesion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/txtCerrar"
+                android:layout_margin="15dp"
+                />
         </LinearLayout>
 
     </ScrollView>
