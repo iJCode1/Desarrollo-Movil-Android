@@ -9,6 +9,13 @@
     <string name="btnAñadir">Añadir</string>
 
     <!-- ******************* Extras ******************* -->
-
     <string name="txtDescripcion">Imagen</string>
+    <string name="txtInicio">Inicio de Sesión</string>
+    <string name="txtCerrar">Cerrar Sesión</string>
+
+    <!-- ******************* Facebook ******************* -->
+    <string name="facebook_application_id" translatable="false">470953737341072</string>
+
+    <string name="facebook_login_protocol_scheme" translatable="false">fb470953737341072</string>
+
 </resources>
