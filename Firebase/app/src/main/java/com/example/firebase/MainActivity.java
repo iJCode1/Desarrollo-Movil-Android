@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
@@ -34,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
     private List<Cubo> listCubos = new ArrayList<Cubo>();
     ArrayAdapter<Cubo> arrayAdapterCubo;
 
+    Cubo cuboSelected;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +51,17 @@ public class MainActivity extends AppCompatActivity {
 
         inicializarFirebase();
         listarDatos();
+
+        lvCubos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                cuboSelected = (Cubo) parent.getItemAtPosition(position);
+
+                etNombre.setText(cuboSelected.getNombre());
+                etCategoria.setText(cuboSelected.getCategoria());
+                etPrecio.setText(String.valueOf(cuboSelected.getPrecio()));
+            }
+        });
     }
 
     private void listarDatos() {
@@ -113,7 +128,14 @@ public class MainActivity extends AppCompatActivity {
                 break;
             }
             case R.id.icon_save:{
-                Toast.makeText(this, "Guardado Exitoso", Toast.LENGTH_SHORT).show();
+                Cubo cubo = new Cubo();
+                cubo.setUid(cuboSelected.getUid());
+                cubo.setNombre(etNombre.getText().toString().trim());
+                cubo.setCategoria(etCategoria.getText().toString().trim());
+                cubo.setPrecio(Double.parseDouble(etPrecio.getText().toString().trim()));
+                databaseReference.child("Cubo").child(cubo.getUid()).setValue(cubo);
+                Toast.makeText(this, "Actualizado Exitosamente", Toast.LENGTH_SHORT).show();
+                limpiarCajas();
                 break;
             }
             case R.id.icon_delete:{
