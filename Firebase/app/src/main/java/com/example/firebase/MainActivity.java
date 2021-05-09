@@ -1,19 +1,26 @@
 package com.example.firebase;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.firebase.model.Cubo;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
@@ -23,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
+
+    private List<Cubo> listCubos = new ArrayList<Cubo>();
+    ArrayAdapter<Cubo> arrayAdapterCubo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +46,31 @@ public class MainActivity extends AppCompatActivity {
         lvCubos = findViewById(R.id.lv_cubos);
 
         inicializarFirebase();
+        listarDatos();
     }
+
+    private void listarDatos() {
+        databaseReference.child("Cubo").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                listCubos.clear();
+
+                for (DataSnapshot objSnaptshot : dataSnapshot.getChildren()){
+                    Cubo cubo = objSnaptshot.getValue(Cubo.class);
+                    listCubos.add(cubo);
+
+                    arrayAdapterCubo = new ArrayAdapter<Cubo>(MainActivity.this, android.R.layout.simple_list_item_1, listCubos);
+                    lvCubos.setAdapter(arrayAdapterCubo);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
 
 
     private void inicializarFirebase() {
