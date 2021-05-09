@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Firebase</string>
+
+    <string name="txtAlta">Alta de Cubos</string>
+    <string name="textNombre">Ingresa el Nombre</string>
+    <string name="textCategoria">Ingresa la Categoria</string>
+    <string name="textPrecio">Ingresa el Precio</string>
+    <string name="textLista">Lista de Cubos</string>
+    <string name="btnAñadir">Añadir</string>
+
+    <!-- ******************* Extras ******************* -->
+
+    <string name="txtDescripcion">Imagen</string>
+</resources>
