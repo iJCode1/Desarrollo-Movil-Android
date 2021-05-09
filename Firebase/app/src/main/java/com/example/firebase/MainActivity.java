@@ -139,7 +139,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
             }
             case R.id.icon_delete:{
-                Toast.makeText(this, "Registro eliminado", Toast.LENGTH_SHORT).show();
+                Cubo cubo = new Cubo();
+                cubo.setUid(cuboSelected.getUid());
+                databaseReference.child("Cubo").child(cubo.getUid()).removeValue();
+                Toast.makeText(this,"Eliminado Exitosamente", Toast.LENGTH_LONG).show();
+                limpiarCajas();
                 break;
             }
             default:break;
