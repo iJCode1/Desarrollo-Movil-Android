@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">crud_Firebase</string>
+
+    <string name="txtDatos">Datos</string>
+    <string name="txtNombre">Nombre</string>
+    <string name="txtApellido">Apellido</string>
+    <string name="txtCorreo">Email</string>
+    <string name="txtContraseña">Password</string>
+    <string name="txtLista">Lista de Elementos</string>
+    <string name="btnModificar">Modficar</string>
+    <string name="btnGuardar">Guardar</string>
+    <string name="btnEliminar">Eliminar</string>
+</resources>
