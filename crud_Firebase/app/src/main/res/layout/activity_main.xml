@@ -14,61 +14,65 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="20dp">
+            android:layout_margin="20dp"
+            android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/txtDatos"
                 android:gravity="center"
+                android:text="@string/txtDatos"
                 android:textSize="20sp"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <EditText
                 android:id="@+id/etNombre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:autofillHints=" "
                 android:hint="@string/txtNombre"
                 android:inputType="textPersonName"
-                android:textSize="12sp"
-                android:layout_margin="5dp"/>
+                android:textSize="12sp" />
 
             <EditText
                 android:id="@+id/etApellido"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:autofillHints=" "
                 android:hint="@string/txtApellido"
                 android:inputType="textPersonName"
-                android:textSize="12sp"
-                android:layout_margin="5dp"/>
+                android:textSize="12sp" />
 
             <EditText
                 android:id="@+id/etCorreo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:autofillHints=" "
                 android:hint="@string/txtCorreo"
                 android:inputType="textEmailAddress"
-                android:textSize="12sp"
-                android:layout_margin="5dp"/>
+                android:textSize="12sp" />
 
             <EditText
                 android:id="@+id/etContraseña"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:autofillHints=" "
                 android:hint="@string/txtContraseña"
                 android:inputType="textPassword"
-                android:textSize="12sp"
-                android:layout_margin="5dp"/>
+                android:textSize="12sp" />
         </LinearLayout>
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/txtLista"
+            android:layout_margin="25sp"
             android:gravity="center"
-            android:textSize="15sp"
-            android:layout_margin="25sp"/>
+            android:text="@string/txtLista"
+            android:textSize="15sp" />
 
         <ListView
             android:id="@+id/lvListaElementos"
@@ -76,7 +80,7 @@
             android:layout_height="match_parent"
             android:layout_margin="20dp"
             android:layout_marginBottom="5dp"
-            android:smoothScrollbar="true"/>
+            android:smoothScrollbar="true" />
 
     </LinearLayout>
 
