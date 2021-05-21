@@ -1,5 +1,6 @@
 package com.example.crud_firebase;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -14,6 +15,12 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import com.example.crud_firebase.dbfb.Persona;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
     private List<Persona> ListaPersona = new ArrayList<Persona>();
     ArrayAdapter<Persona> arrayAdapterPersona;
     Persona personaSelected;
+
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +64,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void iniciarFirebase() {
+        FirebaseApp.initializeApp(this);
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();
     }
 
     private void listarDatos() {
+        databaseReference.child("Persona").addValueEventListener(new ValueEventListener() {
+            @Override
+            //@NonNull @org.jetbrains.annotations.NotNull
+            public void onDataChange(DataSnapshot snapshot) {
+                ListaPersona.clear();
+                for(DataSnapshot objSnapshot: snapshot.getChildren()){
+                    Persona p = objSnapshot.getValue(Persona.class);
+                    ListaPersona.add(p);
+                    arrayAdapterPersona = new ArrayAdapter<Persona>(MainActivity.this, android.R.layout.simple_list_item_1, ListaPersona);
+                    lvPersonas.setAdapter(arrayAdapterPersona);
+                }
+            }
 
+            @Override
+            public void onCancelled(DatabaseError error) {
+
+            }
+        });
     }
 
     private void limpiar(){
@@ -84,7 +114,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public boolean OnCreateOptionsMenu(Menu menu){
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -108,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
                     p.setApellido(last_name);
                     p.setCorreo(email);
                     p.setPassword(password);
-                    //dataReference.child("Persona").child(p.getUid()).setValue(p);
+                    databaseReference.child("Persona").child(p.getUid()).setValue(p);
                     Toast.makeText(this, "Añadido Correctamente", Toast.LENGTH_LONG).show();
                     limpiar();
                 }
@@ -120,14 +151,14 @@ public class MainActivity extends AppCompatActivity {
                 p.setApellido(etApellido.getText().toString().trim());
                 p.setCorreo(etCorreo.getText().toString().trim());
                 p.setPassword(etContraseña.getText().toString().trim());
-                //dataReference.child("Persona").child(p.getUid()).setValue(p);
+                databaseReference.child("Persona").child(p.getUid()).setValue(p);
                 Toast.makeText(this, "Actualizado Correctamente", Toast.LENGTH_LONG).show();
                 limpiar();
             } break;
             case R.id.icon_delete:{
                 Persona p = new Persona();
                 p.setUid(personaSelected.getUid());
-                //dataReference.child("Persona").child(p.getUid()).removeValue();
+                databaseReference.child("Persona").child(p.getUid()).removeValue();
                 Toast.makeText(this, "Eliminado Correctamente", Toast.LENGTH_LONG).show();
                 limpiar();
             } break;
