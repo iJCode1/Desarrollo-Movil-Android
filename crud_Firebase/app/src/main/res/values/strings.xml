@@ -3,9 +3,13 @@
 
     <string name="txtDatos">Datos</string>
     <string name="txtNombre">Nombre</string>
+    <string name="txtHelperNombre">Aqui debes ingresar tu nombre</string>
     <string name="txtApellido">Apellido</string>
+    <string name="txtHelperApellido">Aqui debes ingresar tu apellido</string>
     <string name="txtCorreo">Email</string>
+    <string name="txtHelperCorreo">Aqui debes ingresar tu correo</string>
     <string name="txtContraseña">Password</string>
+    <string name="txtHelperContraseña">Aqui debes ingresar tu contraseña</string>
     <string name="txtLista">Lista de Elementos</string>
     <string name="btnModificar">Modficar</string>
     <string name="btnGuardar">Guardar</string>
