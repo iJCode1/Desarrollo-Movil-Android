@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ihome"
+            android:title="@string/fragment_home" />
+        <item
+            android:id="@+id/nav_altas"
+            android:icon="@drawable/ialtas"
+            android:title="@string/fragment_altas" />
+        <item
+            android:id="@+id/nav_buscar"
+            android:icon="@drawable/ibuscar"
+            android:title="@string/fragment_buscar" />
+        <item
+            android:id="@+id/nav_activos"
+            android:icon="@drawable/iactivos"
+            android:title="@string/fragment_activos" />
+        <item
+            android:id="@+id/nav_inactivos"
+            android:icon="@drawable/inactive"
+            android:title="@string/fragment_inactivos" />
+        <item
+            android:id="@+id/nav_creditos"
+            android:icon="@drawable/icreditos"
+            android:title="@string/fragment_creditos" />
+    </group>
+</menu>

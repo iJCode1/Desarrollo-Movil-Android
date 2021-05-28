@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.evaluaciont3_rubikstimefirebase.ui.home.HomeFragment"
+        android:label="@string/fragment_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_altas"
+        android:name="com.example.evaluaciont3_rubikstimefirebase.ui.altas.AltasFragment"
+        android:label="@string/fragment_altas"
+        tools:layout="@layout/fragment_altas" />
+
+    <fragment
+        android:id="@+id/nav_buscar"
+        android:name="com.example.evaluaciont3_rubikstimefirebase.ui.buscar.BuscarFragment"
+        android:label="@string/fragment_buscar"
+        tools:layout="@layout/fragment_buscar" />
+
+    <fragment
+        android:id="@+id/nav_activos"
+        android:name="com.example.evaluaciont3_rubikstimefirebase.ui.activos.ActivosFragment"
+        android:label="@string/fragment_activos"
+        tools:layout="@layout/fragment_activos" />
+
+    <fragment
+        android:id="@+id/nav_inactivos"
+        android:name="com.example.evaluaciont3_rubikstimefirebase.ui.inactivos.InactivosFragment"
+        android:label="@string/fragment_inactivos"
+        tools:layout="@layout/fragment_inactivos" />
+
+    <fragment
+        android:id="@+id/nav_creditos"
+        android:name="com.example.evaluaciont3_rubikstimefirebase.ui.creditos.CreditosFragment"
+        android:label="@string/fragment_creditos"
+        tools:layout="@layout/fragment_creditos" />
+</navigation>
