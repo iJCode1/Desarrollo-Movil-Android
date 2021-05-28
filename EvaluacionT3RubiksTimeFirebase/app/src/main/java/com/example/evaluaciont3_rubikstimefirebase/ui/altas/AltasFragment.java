@@ -3,6 +3,7 @@ package com.example.evaluaciont3_rubikstimefirebase.ui.altas;
 
 
 import com.example.evaluaciont3_rubikstimefirebase.R;
+import com.example.evaluaciont3_rubikstimefirebase.dbfb.Cubo;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -40,6 +41,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.UUID;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -109,8 +111,8 @@ public class AltasFragment extends Fragment implements View.OnClickListener, Dat
         sCategoria = root.findViewById(R.id.fa_cubos_categoria);
         sStatus = root.findViewById(R.id.fa_status);
 
-        //CatAdapter = ArrayAdapter.createFromResource(getContext(),R.array.cubes_category,android.R.layout.simple_spinner_item);
-        //StatusAdapter = ArrayAdapter.createFromResource(getContext(),R.array.status,android.R.layout.simple_spinner_item);
+        CatAdapter = ArrayAdapter.createFromResource(getContext(),R.array.cubes_category,android.R.layout.simple_spinner_item);
+        StatusAdapter = ArrayAdapter.createFromResource(getContext(),R.array.status,android.R.layout.simple_spinner_item);
 
         sCategoria.setAdapter(CatAdapter);
         sStatus.setAdapter(StatusAdapter);
@@ -179,12 +181,35 @@ public class AltasFragment extends Fragment implements View.OnClickListener, Dat
     }
 
     private boolean validateFields(){
+        int id = Integer.parseInt(etId.getText().toString());
+        String name = etNombre.getText().toString();
+        String descripcion = etDescription.getText().toString();
+        String fecha = etFecha.getText().toString();
+        float tiempo = Float.parseFloat(etTime.getText().toString());
+        String categoria = sCategoria.getSelectedItem().toString();
+        String status = sStatus.getSelectedItem().toString();
+
+        if(String.valueOf(id).equals("")){
+            etId.setError("Campo Obligatorio");
+        }else if(name.equals("")){
+            etNombre.setError("Campo Obligatorio");
+        }else if(descripcion.equals("")){
+            etDescription.setError("Campo Obligatorio");
+        }else if(fecha.equals("")){
+            etFecha.setError("Campo Obligatorio");
+        }else if(String.valueOf(tiempo).equals("")){
+            etTime.setError("Campo Obligatorio");
+        }else if(currentPath.equals("")){
+            Toast.makeText(getContext(), "Se requiere tomar una fotografia", Toast.LENGTH_SHORT).show();
+        }
+
+
         if (etId.getText().toString().equals("")||
-                etNombre.getText().toString().equals("") ||
+                etNombre.getText().toString().equals("")/* ||
                 etDescription.getText().toString().equals("") ||
                 etFecha.getText().toString().equals("") ||
                 etTime.getText().toString().equals("") ||
-                currentPath.equals("")){
+                currentPath.equals("")*/){
             return false;
         }
         return true;
@@ -199,16 +224,21 @@ public class AltasFragment extends Fragment implements View.OnClickListener, Dat
 
     @Override
     public void onClick(View v) {
-        //String name = etNombre.getText().toString();
-        //String descripcion = etDescription.getText().toString();
-        //Date fecha = (Date)etFecha.getText();
-        //float tiempo = Float.parseFloat(etTime.getText().toString());
+        Toast.makeText(getContext(), "Fecha: "+etFecha.getText(), Toast.LENGTH_SHORT).show();
+        int id = Integer.parseInt(etId.getText().toString());
+        String name = etNombre.getText().toString();
+        String descripcion = etDescription.getText().toString();
+        String fecha = etFecha.getText().toString();
+        float tiempo = Float.parseFloat(etTime.getText().toString());
+        String categoria = sCategoria.getSelectedItem().toString();
+        String status = sStatus.getSelectedItem().toString();
         //String path = currentPath;
 
 
         switch(v.getId()){
             case R.id.fa_btnAdd:
-                if (!validateFields()){
+                if (String.valueOf(id).equals("")|name.equals("")|descripcion.equals("")|fecha.equals("")|String.valueOf(tiempo).equals("")|currentPath.equals("")){
+                    validateFields();
                     Toast.makeText(getContext(),"Complete campos", Toast.LENGTH_LONG).show();
                     //Toast.makeText(getContext(), etNombre.getText().toString(), Toast.LENGTH_LONG).show();
                 }else {
@@ -224,10 +254,20 @@ public class AltasFragment extends Fragment implements View.OnClickListener, Dat
                             Toast.LENGTH_SHORT).show();*/
 
                     //Toast.makeText(getContext(), "Picture!"+picture, Toast.LENGTH_SHORT).show();
-                    /*Cubo c = new Cubo();
+                    Cubo c = new Cubo();
+                    c.setId(id);
                     c.setUid(UUID.randomUUID().toString());
                     c.setNombre(name);
                     c.setDescripcion(descripcion);
+                    c.setFecha(fecha);
+                    c.setTiempo(tiempo);
+                    c.setPath(currentPath);
+                    c.setCategoria(categoria);
+                    c.setStatus(status);
+                    //c.setImage(picture);
+                    databaseReference.child("Cubo").child(c.getUid()).setValue(c);
+                    Toast.makeText(getContext(), "Agregado!", Toast.LENGTH_SHORT).show();
+                    /*c.setDescripcion(descripcion);
                     //c.setFecha(fecha);
                     c.setTiempo(tiempo);
                     c.setPath(path);

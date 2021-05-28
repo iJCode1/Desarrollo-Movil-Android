@@ -5,9 +5,10 @@ import java.util.Date;
 
 public class Cubo {
     private String Uid;
+    private int id;
     private String Nombre;
     private String Descripcion;
-    private Date Fecha;
+    private String Fecha;
     private String Categoria;
     private String Status;
     private float Tiempo;
@@ -38,11 +39,11 @@ public class Cubo {
         Descripcion = descripcion;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return Fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         Fecha = fecha;
     }
 
@@ -88,5 +89,13 @@ public class Cubo {
 
     public String toString(){
         return (Nombre + " " + Tiempo);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }
