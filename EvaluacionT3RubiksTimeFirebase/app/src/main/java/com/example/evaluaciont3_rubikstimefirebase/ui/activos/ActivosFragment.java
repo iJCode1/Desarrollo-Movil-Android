@@ -193,7 +193,7 @@ public class ActivosFragment extends Fragment implements View.OnClickListener, D
                                             for(DataSnapshot ds: dataSnapshot.getChildren()){
                                                 c.setUid(ds.child("uid").getValue().toString());
                                                 databaseReference.child("Cubo").child(c.getUid()).removeValue();
-                                                Toast.makeText(getContext(), "Modificado Correctamente", Toast.LENGTH_LONG).show();
+                                                Toast.makeText(getContext(), "Eliminado Correctamente", Toast.LENGTH_LONG).show();
                                                 //clearFields();
 
                                             }

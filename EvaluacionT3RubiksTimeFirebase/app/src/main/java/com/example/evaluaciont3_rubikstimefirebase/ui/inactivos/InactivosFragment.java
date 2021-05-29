@@ -212,7 +212,7 @@ public class InactivosFragment extends Fragment implements View.OnClickListener,
                                                 c.setCategoria(ds.child("categoria").getValue().toString());
                                                 c.setStatus("Activo");
                                                 databaseReference.child("Cubo").child(c.getUid()).setValue(c);
-                                                Toast.makeText(getContext(), "Modificado Correctamente", Toast.LENGTH_LONG).show();
+                                                Toast.makeText(getContext(), "Activado Correctamente", Toast.LENGTH_LONG).show();
                                                 //clearFields();
 
                                             }

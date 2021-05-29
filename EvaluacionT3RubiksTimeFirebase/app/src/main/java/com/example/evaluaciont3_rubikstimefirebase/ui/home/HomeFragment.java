@@ -1,10 +1,13 @@
 package com.example.evaluaciont3_rubikstimefirebase.ui.home;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.MediaController;
 import android.widget.TextView;
+import android.widget.VideoView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,29 +21,33 @@ import com.example.evaluaciont3_rubikstimefirebase.databinding.FragmentHomeBindi
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
-    private FragmentHomeBinding binding;
+    private VideoView videoV;
+    private View root;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         homeViewModel =
                 new ViewModelProvider(this).get(HomeViewModel.class);
 
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+        root = inflater.inflate(R.layout.fragment_home, container, false);
 
-        //final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                //textView.setText(s);
-            }
-        });
+        initComponents();
+
         return root;
     }
 
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
+    private void initComponents() {
+        videoV = root.findViewById(R.id.videoHome);
+
+        Uri videoUri = Uri.parse("android.resource://"+getContext().getPackageName()+"/"+R.raw.appt3);
+
+        videoV.setVideoURI(videoUri);
+
+        MediaController mediaC = new MediaController(getContext());
+
+        videoV.setMediaController(mediaC);
+
+        videoV.start();
+
     }
 }
