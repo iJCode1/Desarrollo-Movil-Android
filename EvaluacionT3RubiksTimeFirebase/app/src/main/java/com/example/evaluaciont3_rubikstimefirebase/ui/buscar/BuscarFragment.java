@@ -80,6 +80,8 @@ public class BuscarFragment extends Fragment implements View.OnClickListener, Da
 
     private boolean status;
 
+    private int id;
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         buscarViewModel =
@@ -125,6 +127,16 @@ public class BuscarFragment extends Fragment implements View.OnClickListener, Da
         btnBuscar.setOnClickListener((View.OnClickListener) this);
         ivpic.setOnClickListener((View.OnClickListener) this);
         ibtnCalendario.setOnClickListener((View.OnClickListener) this);
+    }
+
+    private void clearFields(){
+        etId.setText("");
+        etNombre.setText("");
+        etDescription.setText("");
+        etFecha.setText("");
+        etTime.setText("");
+        ivpic.setImageResource(R.drawable.icamera);
+        currentPath = "";
     }
 
     private void showDatePicker(){
@@ -194,7 +206,10 @@ public class BuscarFragment extends Fragment implements View.OnClickListener, Da
 
     @Override
     public void onClick(View v) {
-        int id = Integer.parseInt(etId.getText().toString());
+        try {
+            id = Integer.parseInt(etId.getText().toString());
+        }catch(NumberFormatException e){
+        }
         switch (v.getId()) {
             case R.id.fb_btnBuscar:
 
@@ -231,66 +246,14 @@ public class BuscarFragment extends Fragment implements View.OnClickListener, Da
                                 }
                             }
                         }else{
-                            Toast.makeText(getContext(), "No existe", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "Ingrese un ID Valido :(", Toast.LENGTH_SHORT).show();
                         }
                     }
-
                     @Override
                     public void onCancelled(@NonNull @NotNull DatabaseError error) {
 
                     }
                 });
-
-                /*databaseReference.child("Cubo").addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.exists()){
-                            for(DataSnapshot ds: dataSnapshot.getChildren()){
-                                String id = ds.getKey();
-                                String nombre = ds.child("nombre").getValue().toString();
-                                String descripcion = ds.child("descripcion").getValue().toString();
-                                String fecha = ds.child("fecha").getValue().toString();
-                                String tiempo = ds.child("tiempo").getValue().toString();
-                                String path = ds.child("path").getValue().toString();
-                                etNombre.setText(nombre);
-                                etDescription.setText(descripcion);
-                                etFecha.setText(fecha);
-                                etTime.setText(tiempo);
-                                ivpic.setImageURI(Uri.parse(path));
-                            }
-                        }else{
-                            Toast.makeText(getContext(), "No existe", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull @NotNull DatabaseError error) {
-
-                    }
-                });*/
-
-                /*Query q = databaseReference.child("Cubo").orderByChild("id").equalTo(etId.getText().toString());
-
-                q.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.exists()){
-                            for(DataSnapshot ds: dataSnapshot.getChildren()){
-                                String id = ds.getKey();
-                                String nombre = ds.child("nombre").getValue().toString();
-                                etNombre.setText(nombre);
-                            }
-                        }else{
-                            Toast.makeText(getContext(), "No existe!!!", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull @NotNull DatabaseError error) {
-
-                    }
-                });*/
-                //Toast.makeText(getContext(), "Buscando!!!", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.fb_btnEliminar:
                 Toast.makeText(getContext(), "Eliminando!!!!!", Toast.LENGTH_SHORT).show();
@@ -298,9 +261,42 @@ public class BuscarFragment extends Fragment implements View.OnClickListener, Da
             case R.id.fb_btnModificar:
                 if (!validateFields()) {
                     Toast.makeText(getContext(), "Complete campos", Toast.LENGTH_LONG).show();
-                    //Toast.makeText(getContext(), etNombre.getText().toString(), Toast.LENGTH_LONG).show();
                 } else {
-                    Toast.makeText(getContext(), "Modificado!", Toast.LENGTH_SHORT).show();
+                    Cubo c = new Cubo();
+                    Query modificar = FirebaseDatabase.getInstance().getReference().child("Cubo").orderByChild("id").equalTo(id);
+                    modificar.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot) {
+                            if(dataSnapshot.exists()){
+                                for(DataSnapshot ds: dataSnapshot.getChildren()){
+                                    c.setUid(ds.child("uid").getValue().toString());
+                                    c.setId(Integer.parseInt(etId.getText().toString()));
+                                    c.setNombre(etNombre.getText().toString().trim());
+                                    c.setDescripcion(etDescription.getText().toString().trim());
+                                    c.setFecha(etFecha.getText().toString().trim());
+                                    c.setTiempo(Float.parseFloat(etTime.getText().toString().trim()));
+                                    if(currentPath.equals("")){
+                                        c.setPath(ds.child("path").getValue().toString());
+                                    }else{
+                                        c.setPath(currentPath);
+                                    }
+                                    c.setCategoria(sCategoria.getSelectedItem().toString());
+                                    c.setStatus(sStatus.getSelectedItem().toString());
+                                    databaseReference.child("Cubo").child(c.getUid()).setValue(c);
+                                    Toast.makeText(getContext(), "Modificado Correctamente", Toast.LENGTH_LONG).show();
+                                    clearFields();
+
+                                }
+                            }else{
+                                Toast.makeText(getContext(), "El ID Ingresado no existe", Toast.LENGTH_SHORT).show();
+                                clearFields();
+                            }
+                        }
+                        @Override
+                        public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+                        }
+                    });
                 }
                 break;
             case R.id.fb_calendario:
