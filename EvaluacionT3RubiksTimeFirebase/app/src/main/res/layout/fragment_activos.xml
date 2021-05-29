@@ -13,198 +13,46 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/waveHome"
+                android:layout_width="match_parent"
+                android:layout_height="420dp"
+                android:layout_marginStart="-2dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_waveactivos"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-340dp"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/text_activos"
-                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_marginTop="0dp"
+                android:layout_marginBottom="200dp"
+                android:paddingTop="0dp"
                 android:text="@string/fragment_activos"
-                android:textColor="@color/cLila"
-                android:textSize="36dp"
+                android:textColor="@color/cNegro"
+                android:textSize="40dp"
                 android:textStyle="bold"/>
 
-            <ImageView
-                android:id="@+id/fact_imagen"
-                android:layout_width="200dp"
+            <ListView
+                android:id="@+id/lvListaElementos"
+                android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:layout_gravity="center"
-                android:layout_margin="15dp"
-                android:contentDescription="@string/img"
-                android:src="@drawable/icamera" />
-            <ImageView
-                android:id="@+id/fact_imagen2"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_gravity="center"
-                android:layout_margin="15dp"
-                android:contentDescription="@string/img"
-                android:src="@drawable/ifhome" />
-
-            <!-- ID -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:hint="@string/cube_id"
-                android:textColorHint="@color/white"
-                app:boxStrokeColor="@color/cVerde"
-                app:hintTextColor="@color/cCarne">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/fact_id"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:inputType="numberDecimal"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <!-- Nombre del Cubo -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:hint="@string/cube_name"
-                android:textColorHint="@color/white"
-                app:boxStrokeColor="@color/cVerde"
-                app:hintTextColor="@color/cCarne">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/fact_nombre"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <!-- Descripción del Solve -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:hint="@string/cube_description"
-                android:textColorHint="@color/white"
-                app:boxStrokeColor="@color/cVerde"
-                app:hintTextColor="@color/cCarne">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/fact_description"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
-            </com.google.android.material.textfield.TextInputLayout>
+                android:layout_margin="20dp"
+                android:layout_marginBottom="5dp"
+                android:smoothScrollbar="true" />
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="15dp">
-
-                <!-- Fecha Actual -->
-                <com.google.android.material.textfield.TextInputLayout
-                    android:layout_width="300dp"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:hint="@string/cube_DateDue"
-                    android:textColorHint="@color/white"
-                    app:boxStrokeColor="@color/cVerde"
-                    app:hintTextColor="@color/cCarne">
-
-                    <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/fact_fecha"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/white"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
-                </com.google.android.material.textfield.TextInputLayout>
-
-                <androidx.appcompat.widget.AppCompatImageButton
-                    android:id="@+id/fact_calendario"
-                    android:layout_width="0dp"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/icalendar" />
-
-            </LinearLayout>
-
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/fact_cubos_categoria"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:background="@android:color/transparent"
-                android:backgroundTint="@color/white" />
-
-            <androidx.appcompat.widget.AppCompatSpinner
-                android:id="@+id/fact_status"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="15dp"
-                android:background="@android:color/transparent"
-                android:backgroundTint="@color/white" />
-
-            <!-- Tiempo -->
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:hint="@string/cube_time"
-                android:textColorHint="@color/white"
-                app:boxStrokeColor="@color/cVerde"
-                app:hintTextColor="@color/cCarne">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/fact_time"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/white"
-                    android:inputType="numberDecimal"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="15dp">
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/fact_btnEdit"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:elevation="15dp"
-                    android:layout_marginRight="10sp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/cVerde"
-                    android:text="@string/sEdit"/>
-
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/fact_btnDelete"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:elevation="15dp"
-                    android:layout_weight="1"
-                    android:backgroundTint="@color/cRojo"
-                    android:text="@string/sDelete"/>
-
-            </LinearLayout>
+        </LinearLayout>
 
         </LinearLayout>
 
