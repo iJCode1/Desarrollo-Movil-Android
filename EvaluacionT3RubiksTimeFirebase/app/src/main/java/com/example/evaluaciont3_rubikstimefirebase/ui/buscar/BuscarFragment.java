@@ -1,6 +1,8 @@
 package com.example.evaluaciont3_rubikstimefirebase.ui.buscar;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -204,6 +206,73 @@ public class BuscarFragment extends Fragment implements View.OnClickListener, Da
         return false;
     }
 
+    private void deleteFields(){
+        AlertDialog dialogo = new AlertDialog
+                .Builder(getActivity())
+                .setNeutralButton("Baja Lógica (Status)", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        ArrayList<String> status2 = new ArrayList<String>();
+                        status2.add("inactivo");
+                        //ArrayAdapter<String> sp2 = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, status2);
+                        //sp2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        //sStatus.setAdapter(sp2);
+                        sStatus.setSelection(1);
+                    }
+                })
+                .setPositiveButton("Baja Fisica (Definitiva)", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        Cubo c = new Cubo();
+                        Query eliminar = FirebaseDatabase.getInstance().getReference().child("Cubo").orderByChild("id").equalTo(id);
+                        eliminar.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot) {
+                                if(dataSnapshot.exists()){
+                                    for(DataSnapshot ds: dataSnapshot.getChildren()){
+                                        c.setUid(ds.child("uid").getValue().toString());
+                                        databaseReference.child("Cubo").child(c.getUid()).removeValue();
+                                        Toast.makeText(getContext(), "Modificado Correctamente", Toast.LENGTH_LONG).show();
+                                        clearFields();
+
+                                    }
+                                }else{
+                                    Toast.makeText(getContext(), "El ID Ingresado no existe", Toast.LENGTH_SHORT).show();
+                                    clearFields();
+                                }
+                            }
+                            @Override
+                            public void onCancelled(@NonNull @NotNull DatabaseError error) {
+
+                            }
+                        });
+
+                        clearFields();
+                    }
+                })
+                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Toast.makeText(getContext(), "Que bueno que no decidiste eliminar los datos", Toast.LENGTH_SHORT).show();
+                        dialog.dismiss();
+                    }
+                })
+                .setTitle("Confirmar") // El título
+                .setMessage("¿Deseas eliminar los Datos?"+"\n"+
+                        "ID: "+etId.getText()+"\n"+
+                        "Nombre del Cubo: "+etNombre.getText().toString()+"\n"+
+                        "Descripcion del solve: "+etDescription.getText().toString()+"\n"+
+                        "Fecha: "+etFecha.getText().toString()+"\n"+
+                        "Tiempo: "+etTime.getText().toString()+"\n"+
+                        "Categoria: "+sCategoria.getSelectedItem().toString()+"\n"+
+                        "Status: "+sStatus.getSelectedItem().toString()) // El mensaje
+                .create();
+
+        dialogo.show();
+
+    }
+
     @Override
     public void onClick(View v) {
         try {
@@ -256,7 +325,8 @@ public class BuscarFragment extends Fragment implements View.OnClickListener, Da
                 });
                 break;
             case R.id.fb_btnEliminar:
-                Toast.makeText(getContext(), "Eliminando!!!!!", Toast.LENGTH_SHORT).show();
+                deleteFields();
+                //Toast.makeText(getContext(), "Eliminando!!!!!", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.fb_btnModificar:
                 if (!validateFields()) {
