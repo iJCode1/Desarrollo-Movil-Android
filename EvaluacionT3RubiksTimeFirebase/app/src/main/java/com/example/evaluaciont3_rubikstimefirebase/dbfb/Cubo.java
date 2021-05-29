@@ -15,6 +15,22 @@ public class Cubo {
     private Serializable Image;
     private String Path;
 
+    public Cubo() {
+    }
+
+    public Cubo(String uid, int id, String nombre, String descripcion, String fecha, String categoria, String status, float tiempo, Serializable image, String path) {
+        Uid = uid;
+        this.id = id;
+        Nombre = nombre;
+        Descripcion = descripcion;
+        Fecha = fecha;
+        Categoria = categoria;
+        Status = status;
+        Tiempo = tiempo;
+        Image = image;
+        Path = path;
+    }
+
     public String getUid() {
         return Uid;
     }

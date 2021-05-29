@@ -84,7 +84,7 @@ public class InactivosFragment extends Fragment implements View.OnClickListener,
         mViewModel =
                 new ViewModelProvider(this).get(InactivosViewModel.class);
 
-        root = inflater.inflate(R.layout.fragment_altas, container, false);
+        root = inflater.inflate(R.layout.fragment_inactivos, container, false);
         initComponents();
         iniciarFirebase();
         return root;

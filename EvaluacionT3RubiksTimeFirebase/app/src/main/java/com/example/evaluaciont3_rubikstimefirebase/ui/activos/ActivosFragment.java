@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -30,7 +31,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.io.File;
 import java.util.Calendar;
 
-public class ActivosFragment extends Fragment {
+public class ActivosFragment extends Fragment implements View.OnClickListener, DatePickerDialog.OnDateSetListener{
 
     private ActivosViewModel mViewModel;
     private View root;
@@ -69,7 +70,7 @@ public class ActivosFragment extends Fragment {
         mViewModel =
                 new ViewModelProvider(this).get(ActivosViewModel.class);
 
-        root = inflater.inflate(R.layout.fragment_altas, container, false);
+        root = inflater.inflate(R.layout.fragment_activos, container, false);
         initComponents();
         iniciarFirebase();
         return root;
@@ -106,4 +107,13 @@ public class ActivosFragment extends Fragment {
         ibtnCalendario.setOnClickListener((View.OnClickListener) this);
     }
 
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+
+    }
+
+    @Override
+    public void onClick(View v) {
+
+    }
 }
