@@ -49,15 +49,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:hint="@string/cube_id"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/cGris"
                 app:boxStrokeColor="@color/cVerde"
-                app:hintTextColor="@color/cCarne">
+                app:hintTextColor="@color/cGuia">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/fa_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:textColor="@color/cNegro"
                     android:inputType="number"
                     android:textSize="15sp"
                     android:textStyle="bold" />
@@ -70,15 +70,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:hint="@string/cube_name"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/cGris"
                 app:boxStrokeColor="@color/cVerde"
-                app:hintTextColor="@color/cCarne">
+                app:hintTextColor="@color/cGuia">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/fa_nombre"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:textColor="@color/cNegro"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -90,15 +90,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:hint="@string/cube_description"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/cGris"
                 app:boxStrokeColor="@color/cVerde"
-                app:hintTextColor="@color/cCarne">
+                app:hintTextColor="@color/cGuia">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/fa_description"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:textColor="@color/cNegro"
                     android:textSize="15sp"
                     android:textStyle="bold" />
 
@@ -117,15 +117,15 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:hint="@string/cube_DateDue"
-                    android:textColorHint="@color/white"
+                    android:textColorHint="@color/cGris"
                     app:boxStrokeColor="@color/cVerde"
-                    app:hintTextColor="@color/cCarne">
+                    app:hintTextColor="@color/cGuia">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/fa_fecha"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/white"
+                        android:textColor="@color/cNegro"
                         android:textSize="15sp"
                         android:textStyle="bold" />
 
@@ -163,15 +163,15 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 android:hint="@string/cube_time"
-                android:textColorHint="@color/white"
+                android:textColorHint="@color/cGris"
                 app:boxStrokeColor="@color/cVerde"
-                app:hintTextColor="@color/cCarne">
+                app:hintTextColor="@color/cGuia">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/fa_time"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:textColor="@color/cNegro"
                     android:inputType="numberDecimal"
                     android:textSize="15sp"
                     android:textStyle="bold" />

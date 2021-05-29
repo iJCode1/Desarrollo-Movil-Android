@@ -181,38 +181,28 @@ public class AltasFragment extends Fragment implements View.OnClickListener, Dat
     }
 
     private boolean validateFields(){
-        int id = Integer.parseInt(etId.getText().toString());
-        String name = etNombre.getText().toString();
-        String descripcion = etDescription.getText().toString();
-        String fecha = etFecha.getText().toString();
-        float tiempo = Float.parseFloat(etTime.getText().toString());
-        String categoria = sCategoria.getSelectedItem().toString();
-        String status = sStatus.getSelectedItem().toString();
+        try {
+            int id = Integer.parseInt(etId.getText().toString());
+            String name = etNombre.getText().toString();
+            String descripcion = etDescription.getText().toString();
+            String fecha = etFecha.getText().toString();
+            float tiempo = Float.parseFloat(etTime.getText().toString());
+            String categoria = sCategoria.getSelectedItem().toString();
+            String status = sStatus.getSelectedItem().toString();
 
-        if(String.valueOf(id).equals("")){
-            etId.setError("Campo Obligatorio");
-        }else if(name.equals("")){
-            etNombre.setError("Campo Obligatorio");
-        }else if(descripcion.equals("")){
-            etDescription.setError("Campo Obligatorio");
-        }else if(fecha.equals("")){
-            etFecha.setError("Campo Obligatorio");
-        }else if(String.valueOf(tiempo).equals("")){
-            etTime.setError("Campo Obligatorio");
-        }else if(currentPath.equals("")){
-            Toast.makeText(getContext(), "Se requiere tomar una fotografia", Toast.LENGTH_SHORT).show();
-        }
-
-
-        if (etId.getText().toString().equals("")||
-                etNombre.getText().toString().equals("")/* ||
-                etDescription.getText().toString().equals("") ||
-                etFecha.getText().toString().equals("") ||
-                etTime.getText().toString().equals("") ||
-                currentPath.equals("")*/){
+            if (String.valueOf(id).equals("") ||
+                    name.equals("") ||
+                    descripcion.equals("") ||
+                    fecha.equals("") ||
+                    String.valueOf(tiempo).equals("") ||
+                    currentPath.equals("")){
+                return false;
+            }
+            return true;
+        }catch(NumberFormatException e){
+            //Toast.makeText(getContext(),"El ID es muy importante!!!", Toast.LENGTH_LONG).show();
             return false;
         }
-        return true;
     }
 
     private boolean getStatus(String toString){
@@ -224,56 +214,28 @@ public class AltasFragment extends Fragment implements View.OnClickListener, Dat
 
     @Override
     public void onClick(View v) {
-        Toast.makeText(getContext(), "Fecha: "+etFecha.getText(), Toast.LENGTH_SHORT).show();
-        int id = Integer.parseInt(etId.getText().toString());
-        String name = etNombre.getText().toString();
-        String descripcion = etDescription.getText().toString();
-        String fecha = etFecha.getText().toString();
-        float tiempo = Float.parseFloat(etTime.getText().toString());
-        String categoria = sCategoria.getSelectedItem().toString();
-        String status = sStatus.getSelectedItem().toString();
-        //String path = currentPath;
-
-
         switch(v.getId()){
+            case R.id.fa_btnClear:
+                clearFields();
+                break;
             case R.id.fa_btnAdd:
-                if (String.valueOf(id).equals("")|name.equals("")|descripcion.equals("")|fecha.equals("")|String.valueOf(tiempo).equals("")|currentPath.equals("")){
-                    validateFields();
+                if (!validateFields()){
                     Toast.makeText(getContext(),"Complete campos", Toast.LENGTH_LONG).show();
-                    //Toast.makeText(getContext(), etNombre.getText().toString(), Toast.LENGTH_LONG).show();
                 }else {
-                    /*Toast.makeText(getContext(),
-                            "ID del Tiempo: "+etId.getText().toString()+"\n"+
-                                    "Nombre del Cubo: "+ etNombre.getText().toString() + "\n"+
-                                    "Descripción del Solve: "+ etDescription.getText().toString() + "\n"+
-                                    "Fecha: "+ etFecha.getText().toString() + "\n"+
-                                    "URL Image: "+ currentPath + "\n"+
-                                    "Categoria: "+ sCategoria.getSelectedItem().toString() + "\n"+
-                                    "Status: " + getStatus(sStatus.getSelectedItem().toString()) + "\n"+
-                                    "Tiempo: "+ etTime.getText().toString() + "\n",
-                            Toast.LENGTH_SHORT).show();*/
-
-                    //Toast.makeText(getContext(), "Picture!"+picture, Toast.LENGTH_SHORT).show();
                     Cubo c = new Cubo();
-                    c.setId(id);
+                    c.setId(Integer.parseInt(etId.getText().toString()));
                     c.setUid(UUID.randomUUID().toString());
-                    c.setNombre(name);
-                    c.setDescripcion(descripcion);
-                    c.setFecha(fecha);
-                    c.setTiempo(tiempo);
+                    c.setNombre(etNombre.getText().toString());
+                    c.setDescripcion(etDescription.getText().toString());
+                    c.setFecha(etFecha.getText().toString());
+                    c.setTiempo(Float.parseFloat(etTime.getText().toString()));
                     c.setPath(currentPath);
-                    c.setCategoria(categoria);
-                    c.setStatus(status);
+                    c.setCategoria(sCategoria.getSelectedItem().toString());
+                    c.setStatus(sStatus.getSelectedItem().toString());
                     //c.setImage(picture);
                     databaseReference.child("Cubo").child(c.getUid()).setValue(c);
                     Toast.makeText(getContext(), "Agregado!", Toast.LENGTH_SHORT).show();
-                    /*c.setDescripcion(descripcion);
-                    //c.setFecha(fecha);
-                    c.setTiempo(tiempo);
-                    c.setPath(path);
-                    databaseReference.child("Cubo").child(c.getUid()).setValue(c);
-                    Toast.makeText(getContext(), "Agregado!", Toast.LENGTH_SHORT).show();
-                    clearFields();*/
+                    clearFields();
                 }
                 break;
             case R.id.fa_calendario:

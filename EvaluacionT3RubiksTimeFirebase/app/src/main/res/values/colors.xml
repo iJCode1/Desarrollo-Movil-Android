@@ -17,4 +17,7 @@
     <color name="cCarne">#fff3b0</color>
     <color name="cLila">#b8b5ff</color>
     <color name="cHint2">#fb743e</color>
+    <color name="cNegro">#495057</color>
+    <color name="cGris">#6c757d</color>
+    <color name="cGuia">#3d5a80</color>
 </resources>
