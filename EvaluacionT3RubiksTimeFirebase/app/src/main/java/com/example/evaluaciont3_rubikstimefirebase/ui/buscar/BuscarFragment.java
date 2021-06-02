@@ -225,14 +225,14 @@ public class BuscarFragment extends Fragment implements View.OnClickListener, Da
                     public void onClick(DialogInterface dialog, int which) {
 
                         Cubo c = new Cubo();
-                        Query eliminar = FirebaseDatabase.getInstance().getReference().child("Cubo").orderByChild("id").equalTo(id);
+                        Query eliminar = FirebaseDatabase.getInstance().getReference().child("Cubos").orderByChild("id").equalTo(id);
                         eliminar.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot) {
                                 if(dataSnapshot.exists()){
                                     for(DataSnapshot ds: dataSnapshot.getChildren()){
                                         c.setUid(ds.child("uid").getValue().toString());
-                                        databaseReference.child("Cubo").child(c.getUid()).removeValue();
+                                        databaseReference.child("Cubos").child(c.getUid()).removeValue();
                                         Toast.makeText(getContext(), "Modificado Correctamente", Toast.LENGTH_LONG).show();
                                         clearFields();
 
@@ -282,7 +282,7 @@ public class BuscarFragment extends Fragment implements View.OnClickListener, Da
         switch (v.getId()) {
             case R.id.fb_btnBuscar:
 
-                Query consulta = FirebaseDatabase.getInstance().getReference().child("Cubo").orderByChild("id").equalTo(id);
+                Query consulta = FirebaseDatabase.getInstance().getReference().child("Cubos").orderByChild("id").equalTo(id);
                 consulta.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot) {
@@ -316,6 +316,7 @@ public class BuscarFragment extends Fragment implements View.OnClickListener, Da
                             }
                         }else{
                             Toast.makeText(getContext(), "Ingrese un ID Valido :(", Toast.LENGTH_SHORT).show();
+                            clearFields();
                         }
                     }
                     @Override
@@ -333,7 +334,7 @@ public class BuscarFragment extends Fragment implements View.OnClickListener, Da
                     Toast.makeText(getContext(), "Complete campos", Toast.LENGTH_LONG).show();
                 } else {
                     Cubo c = new Cubo();
-                    Query modificar = FirebaseDatabase.getInstance().getReference().child("Cubo").orderByChild("id").equalTo(id);
+                    Query modificar = FirebaseDatabase.getInstance().getReference().child("Cubos").orderByChild("id").equalTo(id);
                     modificar.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot) {
@@ -352,7 +353,7 @@ public class BuscarFragment extends Fragment implements View.OnClickListener, Da
                                     }
                                     c.setCategoria(sCategoria.getSelectedItem().toString());
                                     c.setStatus(sStatus.getSelectedItem().toString());
-                                    databaseReference.child("Cubo").child(c.getUid()).setValue(c);
+                                    databaseReference.child("Cubos").child(c.getUid()).setValue(c);
                                     Toast.makeText(getContext(), "Modificado Correctamente", Toast.LENGTH_LONG).show();
                                     clearFields();
 

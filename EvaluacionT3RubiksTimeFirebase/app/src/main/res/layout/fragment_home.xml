@@ -17,6 +17,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:fontFamily="@font/inder"
                 android:id="@+id/text_altas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

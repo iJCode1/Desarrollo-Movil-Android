@@ -130,7 +130,7 @@ public class InactivosFragment extends Fragment implements View.OnClickListener,
                     idElemento = Integer.parseInt(String.valueOf(c.getUid()));
                 }catch(NumberFormatException e){
                 }
-                Query consulta = FirebaseDatabase.getInstance().getReference().child("Cubo").orderByChild("uid").equalTo(cuboSelected.getUid());
+                Query consulta = FirebaseDatabase.getInstance().getReference().child("Cubos").orderByChild("uid").equalTo(cuboSelected.getUid());
                 consulta.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot) {
@@ -192,7 +192,7 @@ public class InactivosFragment extends Fragment implements View.OnClickListener,
                             public void onClick(DialogInterface dialog, int which) {
 
                                 Cubo c = new Cubo();
-                                Query eliminar = FirebaseDatabase.getInstance().getReference().child("Cubo").orderByChild("uid").equalTo(cuboSelected.getUid());
+                                Query eliminar = FirebaseDatabase.getInstance().getReference().child("Cubos").orderByChild("uid").equalTo(cuboSelected.getUid());
                                 eliminar.addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot) {
@@ -211,7 +211,7 @@ public class InactivosFragment extends Fragment implements View.OnClickListener,
                                                 }
                                                 c.setCategoria(ds.child("categoria").getValue().toString());
                                                 c.setStatus("Activo");
-                                                databaseReference.child("Cubo").child(c.getUid()).setValue(c);
+                                                databaseReference.child("Cubos").child(c.getUid()).setValue(c);
                                                 Toast.makeText(getContext(), "Activado Correctamente", Toast.LENGTH_LONG).show();
                                                 //clearFields();
 
@@ -267,7 +267,7 @@ public class InactivosFragment extends Fragment implements View.OnClickListener,
 
     private void listarDatos() {
 
-        Query activos = FirebaseDatabase.getInstance().getReference().child("Cubo").orderByChild("status").equalTo("Inactivo");
+        Query activos = FirebaseDatabase.getInstance().getReference().child("Cubos").orderByChild("status").equalTo("Inactivo");
         activos.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot) {
@@ -290,7 +290,7 @@ public class InactivosFragment extends Fragment implements View.OnClickListener,
             }
         });
         /*
-        databaseReference.child("Cubo").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("Cubos").addValueEventListener(new ValueEventListener() {
             @Override
             //@NonNull @org.jetbrains.annotations.NotNull
             public void onDataChange(DataSnapshot snapshot) {

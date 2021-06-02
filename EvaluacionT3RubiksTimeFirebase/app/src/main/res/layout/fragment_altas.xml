@@ -17,6 +17,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:fontFamily="@font/inder"
                 android:id="@+id/text_altas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -44,64 +45,89 @@
                 android:src="@drawable/ifhome" />
 
             <!-- ID -->
+
             <com.google.android.material.textfield.TextInputLayout
+                android:fontFamily="@font/inder"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginTop="20dp"
                 android:hint="@string/cube_id"
-                android:textColorHint="@color/cGris"
-                app:boxStrokeColor="@color/cVerde"
-                app:hintTextColor="@color/cGuia">
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:counterEnabled="true"
+                app:endIconMode="clear_text"
+                app:helperText="@string/helper_cube_id"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/fa_id"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/cNegro"
                     android:inputType="number"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
+                    android:fontFamily="@font/inder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
+
 
             <!-- Nombre del Cubo -->
             <com.google.android.material.textfield.TextInputLayout
+                android:fontFamily="@font/inder"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginTop="20dp"
                 android:hint="@string/cube_name"
-                android:textColorHint="@color/cGris"
-                app:boxStrokeColor="@color/cVerde"
-                app:hintTextColor="@color/cGuia">
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:counterEnabled="true"
+                app:endIconMode="clear_text"
+                app:helperText="@string/helper_cube_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/fa_nombre"
+                    android:inputType="textPersonName"
+                    android:fontFamily="@font/inder"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/cNegro"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
+                    android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <!-- Descripción del Solve -->
             <com.google.android.material.textfield.TextInputLayout
+                android:fontFamily="@font/inder"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginTop="20dp"
                 android:hint="@string/cube_description"
-                android:textColorHint="@color/cGris"
-                app:boxStrokeColor="@color/cVerde"
-                app:hintTextColor="@color/cGuia">
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:counterEnabled="true"
+                app:endIconMode="clear_text"
+                app:helperText="@string/helper_cube_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/fa_description"
+                    android:inputType="text"
+                    android:fontFamily="@font/inder"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/cNegro"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
+                    android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -113,28 +139,39 @@
 
                 <!-- Fecha Actual -->
                 <com.google.android.material.textfield.TextInputLayout
+                    android:fontFamily="@font/inder"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
+                    android:layout_marginTop="20dp"
                     android:hint="@string/cube_DateDue"
-                    android:textColorHint="@color/cGris"
-                    app:boxStrokeColor="@color/cVerde"
-                    app:hintTextColor="@color/cGuia">
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:counterEnabled="true"
+                    app:endIconMode="clear_text"
+                    app:helperText="@string/helper_cube_DateDue"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/fa_fecha"
+                        android:inputType="date"
+                        android:fontFamily="@font/inder"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/cNegro"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
+                        android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
+
+
 
                 <androidx.appcompat.widget.AppCompatImageButton
                     android:id="@+id/fa_calendario"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
+                    android:layout_marginTop="20dp"
                     android:layout_weight="1"
                     android:adjustViewBounds="true"
                     android:src="@drawable/icalendar" />
@@ -142,6 +179,7 @@
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatSpinner
+                android:fontFamily="@font/inder"
                 android:id="@+id/fa_cubos_categoria"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -150,6 +188,7 @@
                 android:backgroundTint="@color/white" />
 
             <androidx.appcompat.widget.AppCompatSpinner
+                android:fontFamily="@font/inder"
                 android:id="@+id/fa_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -159,22 +198,31 @@
 
             <!-- Tiempo -->
             <com.google.android.material.textfield.TextInputLayout
+                android:fontFamily="@font/inder"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
                 android:hint="@string/cube_time"
-                android:textColorHint="@color/cGris"
-                app:boxStrokeColor="@color/cVerde"
-                app:hintTextColor="@color/cGuia">
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:counterEnabled="true"
+                app:endIconMode="clear_text"
+                app:helperText="@string/helper_cube_time"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/fa_time"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/cNegro"
                     android:inputType="numberDecimal"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/inder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
@@ -184,6 +232,7 @@
                 android:layout_margin="15dp">
 
                 <com.google.android.material.button.MaterialButton
+                    android:fontFamily="@font/inder"
                     android:id="@+id/fa_btnAdd"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -195,6 +244,7 @@
                     android:text="@string/sAdd"/>
 
                 <com.google.android.material.button.MaterialButton
+                    android:fontFamily="@font/inder"
                     android:id="@+id/fa_btnClear"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

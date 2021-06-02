@@ -23,11 +23,17 @@
 
     <!-- Altas -->
     <string name="cube_id">ID del Tiempo Registrado</string>
+    <string name="helper_cube_id">Aquí debes ingresar el ID</string>
     <string name="cube_description">Descripción del Solve</string>
+    <string name="helper_cube_description">Aquí debes ingresar la Descripción del Solve</string>
     <string name="cube_name">Nombre del Cubo</string>
+    <string name="helper_cube_name">Aquí debes ingresar el Nombre del Cubo</string>
     <string name="cube_DateDue">Fecha Actual</string>
+    <string name="helper_cube_DateDue">Aquí debes ingresar la Fecha Actual</string>
     <string name="cube_time">Tiempo</string>
+    <string name="helper_cube_time">Aquí debes ingresar el Tiempo</string>
     <string name="cube_search_id">ID a Buscar</string>
+    <string name="helper_cube_search_id">Aquí debes ingresar el ID a Buscar</string>
 
     <!-- Buttons -->
     <string name="sClear">Limpiar</string>

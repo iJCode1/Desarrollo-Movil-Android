@@ -233,7 +233,7 @@ public class AltasFragment extends Fragment implements View.OnClickListener, Dat
                     c.setCategoria(sCategoria.getSelectedItem().toString());
                     c.setStatus(sStatus.getSelectedItem().toString());
                     //c.setImage(picture);
-                    databaseReference.child("Cubo").child(c.getUid()).setValue(c);
+                    databaseReference.child("Cubos").child(c.getUid()).setValue(c);
                     Toast.makeText(getContext(), "Agregado!", Toast.LENGTH_SHORT).show();
                     clearFields();
                 }

@@ -3,28 +3,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group android:checkableBehavior="single" android:fontFamily="@font/inder">
         <item
+            android:fontFamily="@font/inder"
             android:id="@+id/nav_home"
             android:icon="@drawable/ihome"
             android:title="@string/fragment_home" />
         <item
+            android:fontFamily="@font/inder"
             android:id="@+id/nav_altas"
             android:icon="@drawable/ialtas"
             android:title="@string/fragment_altas" />
         <item
+            android:fontFamily="@font/inder"
             android:id="@+id/nav_buscar"
             android:icon="@drawable/ibuscar"
             android:title="@string/fragment_buscar" />
         <item
+            android:fontFamily="@font/inder"
             android:id="@+id/nav_activos"
             android:icon="@drawable/iactivos"
             android:title="@string/fragment_activos" />
         <item
+            android:fontFamily="@font/inder"
             android:id="@+id/nav_inactivos"
             android:icon="@drawable/inactive"
             android:title="@string/fragment_inactivos" />
         <item
+            android:fontFamily="@font/inder"
             android:id="@+id/nav_creditos"
             android:icon="@drawable/icreditos"
             android:title="@string/fragment_creditos" />

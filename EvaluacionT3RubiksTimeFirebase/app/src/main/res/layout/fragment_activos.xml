@@ -32,18 +32,30 @@
             android:orientation="vertical">
 
             <TextView
+                android:fontFamily="@font/inder"
                 android:gravity="center"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="0dp"
+                android:layout_marginTop="-10dp"
                 android:layout_marginBottom="200dp"
                 android:paddingTop="0dp"
                 android:text="@string/fragment_activos"
                 android:textColor="@color/cNegro"
-                android:textSize="40dp"
+                android:textSize="50dp"
                 android:textStyle="bold"/>
 
+            <ImageView
+                android:id="@+id/wave"
+                android:layout_gravity="center"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="-120dp"
+                android:layout_marginEnd="0dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_actived"/>
+
             <ListView
+                android:fontFamily="@font/inder"
                 android:id="@+id/lvListaElementos"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"

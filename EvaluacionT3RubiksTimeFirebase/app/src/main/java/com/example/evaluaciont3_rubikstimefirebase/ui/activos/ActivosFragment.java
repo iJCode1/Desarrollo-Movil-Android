@@ -123,7 +123,7 @@ public class ActivosFragment extends Fragment implements View.OnClickListener, D
                     idElemento = Integer.parseInt(String.valueOf(c.getUid()));
                 }catch(NumberFormatException e){
                 }
-                Query consulta = FirebaseDatabase.getInstance().getReference().child("Cubo").orderByChild("uid").equalTo(cuboSelected.getUid());
+                Query consulta = FirebaseDatabase.getInstance().getReference().child("Cubos").orderByChild("uid").equalTo(cuboSelected.getUid());
                 consulta.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot) {
@@ -185,14 +185,14 @@ public class ActivosFragment extends Fragment implements View.OnClickListener, D
                             public void onClick(DialogInterface dialog, int which) {
 
                                 Cubo c = new Cubo();
-                                Query eliminar = FirebaseDatabase.getInstance().getReference().child("Cubo").orderByChild("uid").equalTo(cuboSelected.getUid());
+                                Query eliminar = FirebaseDatabase.getInstance().getReference().child("Cubos").orderByChild("uid").equalTo(cuboSelected.getUid());
                                 eliminar.addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
                                     public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot) {
                                         if(dataSnapshot.exists()){
                                             for(DataSnapshot ds: dataSnapshot.getChildren()){
                                                 c.setUid(ds.child("uid").getValue().toString());
-                                                databaseReference.child("Cubo").child(c.getUid()).removeValue();
+                                                databaseReference.child("Cubos").child(c.getUid()).removeValue();
                                                 Toast.makeText(getContext(), "Eliminado Correctamente", Toast.LENGTH_LONG).show();
                                                 //clearFields();
 
@@ -246,7 +246,7 @@ public class ActivosFragment extends Fragment implements View.OnClickListener, D
 
     private void listarDatos() {
 
-        Query activos = FirebaseDatabase.getInstance().getReference().child("Cubo").orderByChild("status").equalTo("Activo");
+        Query activos = FirebaseDatabase.getInstance().getReference().child("Cubos").orderByChild("status").equalTo("Activo");
         activos.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull @NotNull DataSnapshot dataSnapshot) {

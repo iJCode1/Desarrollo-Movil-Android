@@ -16,10 +16,12 @@
             android:layout_margin="15dp">
 
             <TextView
+                android:fontFamily="@font/inder"
                 android:id="@+id/textBuscar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/fragment_buscar"
+                android:textColor="@color/cLila"
                 android:layout_gravity="center"
                 android:textStyle="bold"
                 android:textSize="30sp"/>
@@ -40,23 +42,30 @@
                 android:layout_margin="15dp">
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:fontFamily="@font/inder"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:hint="@string/cube_search_id"
-                    app:counterTextColor="@color/teal_700"
-                    android:textColorHint="@color/cGris"
-                    app:boxStrokeColor="@color/cVerde"
-                    app:hintTextColor="@color/cGuia">
+                    android:layout_marginTop="0dp"
+                    android:hint="@string/cube_id"
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:counterEnabled="true"
+                    app:endIconMode="clear_text"
+                    app:helperText="@string/helper_cube_id"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/fb_idTiempo"
+                        android:inputType="number"
+                        android:fontFamily="@font/inder"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/cNegro"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
+                        android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <androidx.appcompat.widget.AppCompatImageButton
@@ -70,43 +79,58 @@
             </LinearLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:fontFamily="@font/inder"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginTop="10dp"
                 android:hint="@string/cube_name"
-                android:textColorHint="@color/cGris"
-                app:boxStrokeColor="@color/cVerde"
-                app:hintTextColor="@color/cGuia">
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:counterEnabled="true"
+                app:endIconMode="clear_text"
+                app:helperText="@string/helper_cube_name"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/fb_nombre"
+                    android:inputType="textPersonName"
+                    android:fontFamily="@font/inder"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/cNegro"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
+                    android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
+                android:fontFamily="@font/inder"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginTop="20dp"
                 android:hint="@string/cube_description"
-                android:textColorHint="@color/cGris"
-                app:boxStrokeColor="@color/cVerde"
-                app:hintTextColor="@color/cGuia">
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:counterEnabled="true"
+                app:endIconMode="clear_text"
+                app:helperText="@string/helper_cube_description"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/fb_description"
+                    android:inputType="text"
+                    android:fontFamily="@font/inder"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/cNegro"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
-
+                    android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -115,27 +139,37 @@
                 android:layout_margin="15dp">
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:fontFamily="@font/inder"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
+                    android:layout_marginTop="10dp"
                     android:hint="@string/cube_DateDue"
-                    android:textColorHint="@color/cGris"
-                    app:boxStrokeColor="@color/cVerde"
-                    app:hintTextColor="@color/cGuia">
+                    app:boxBackgroundMode="outline"
+                    app:boxCornerRadiusBottomEnd="10dp"
+                    app:boxCornerRadiusBottomStart="10dp"
+                    app:boxCornerRadiusTopEnd="10dp"
+                    app:boxCornerRadiusTopStart="10dp"
+                    app:counterEnabled="true"
+                    app:endIconMode="clear_text"
+                    app:helperText="@string/helper_cube_DateDue"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/fb_fecha"
+                        android:inputType="date"
+                        android:fontFamily="@font/inder"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/cNegro"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
+                        android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <androidx.appcompat.widget.AppCompatImageButton
+                    android:fontFamily="@font/inder"
                     android:id="@+id/fb_calendario"
                     android:layout_width="0dp"
+                    android:layout_marginTop="10dp"
                     android:layout_height="50dp"
                     android:layout_weight="1"
                     android:adjustViewBounds="true"
@@ -144,6 +178,7 @@
             </LinearLayout>
 
             <androidx.appcompat.widget.AppCompatSpinner
+                android:fontFamily="@font/inder"
                 android:id="@+id/fb_cubos_categoria"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -152,6 +187,7 @@
                 android:backgroundTint="@color/white" />
 
             <androidx.appcompat.widget.AppCompatSpinner
+                android:fontFamily="@font/inder"
                 android:id="@+id/fb_status"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -160,22 +196,31 @@
                 android:backgroundTint="@color/white" />
 
             <com.google.android.material.textfield.TextInputLayout
+                android:fontFamily="@font/inder"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="30dp"
                 android:hint="@string/cube_time"
-                android:textColorHint="@color/cGris"
-                app:boxStrokeColor="@color/cVerde"
-                app:hintTextColor="@color/cGuia">
+                app:boxBackgroundMode="outline"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:counterEnabled="true"
+                app:endIconMode="clear_text"
+                app:helperText="@string/helper_cube_time"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/fb_time"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/cNegro"
                     android:inputType="numberDecimal"
-                    android:textSize="15sp"
-                    android:textStyle="bold" />
+                    android:fontFamily="@font/inder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
@@ -185,6 +230,7 @@
                 android:layout_margin="15dp">
 
                 <com.google.android.material.button.MaterialButton
+                    android:fontFamily="@font/inder"
                     android:id="@+id/fb_btnModificar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -196,6 +242,7 @@
                     android:text="@string/sModify"/>
 
                 <com.google.android.material.button.MaterialButton
+                    android:fontFamily="@font/inder"
                     android:id="@+id/fb_btnEliminar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
